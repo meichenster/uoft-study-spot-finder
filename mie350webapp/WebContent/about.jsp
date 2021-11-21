@@ -42,7 +42,7 @@
 				students�� unfamiliarity with the campus, the team proposes to create
 				a consumer information website to help students find the best study
 				spots on and around UofT��s St. George campus. In addition, this can
-				aid students in finding new areas to meet for group meetings. LOL HI
+				aid students in finding new areas to meet for group meetings. 
 				<br><br>
 				The website will include a database of study spaces and their relevant
 				specifications, such as location, accessibility, capacity, and noise
