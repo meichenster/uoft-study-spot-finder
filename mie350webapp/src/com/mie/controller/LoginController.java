@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 //iiiiiiiihihihi
-
+//kokokok
 import com.mie.model.*;
 import com.mie.dao.*;
 
@@ -36,8 +36,8 @@ public class LoginController extends HttpServlet {
 			member = MemberDao.login(member);
 
 			/**
-			 * If the isValid value is true, assign session attributes to the
-			 * current member.
+			 * If the isValid value is true, assign session attributes to the current
+			 * member.
 			 */
 			if (member.isValid()) {
 
@@ -52,16 +52,16 @@ public class LoginController extends HttpServlet {
 				response.sendRedirect("memberLogged.jsp");
 
 				/**
-				 * Set a timeout variable of 900 seconds (15 minutes) for this
-				 * member who has logged into the system.
+				 * Set a timeout variable of 900 seconds (15 minutes) for this member who has
+				 * logged into the system.
 				 */
 				session.setMaxInactiveInterval(900);
 			}
 
 			else {
 				/**
-				 * Otherwise, redirect the user to the invalid login page and
-				 * ask them to log in again with the proper credentials.
+				 * Otherwise, redirect the user to the invalid login page and ask them to log in
+				 * again with the proper credentials.
 				 */
 				response.sendRedirect("invalidLogin.jsp");
 			}
