@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<!-- temp comment -->
 <html lang="en">
 <head>
 <title>MIE350 Sample Web App - About</title>
@@ -40,15 +40,15 @@
 				second-year students have never been on campus before, and the
 				upper-year students may have not had the opportunity to explore the
 				campus enough in their first or second year. In order to address the
-				students¡¯ unfamiliarity with the campus, the team proposes to create
+				studentsï¿½ï¿½ unfamiliarity with the campus, the team proposes to create
 				a consumer information website to help students find the best study
-				spots on and around UofT¡¯s St. George campus. In addition, this can
+				spots on and around UofTï¿½ï¿½s St. George campus. In addition, this can
 				aid students in finding new areas to meet for group meetings. 
 				<br><br>
 				The website will include a database of study spaces and their relevant
 				specifications, such as location, accessibility, capacity, and noise
 				level. Users will be able to provide reviews for each study spot and
-				¡°favourite¡± study spot locations. Through their account, they can
+				ï¿½ï¿½favouriteï¿½ï¿½ study spot locations. Through their account, they can
 				view their account information and list the spots they have tried by
 				leaving comments and ranking them using different categories to
 				remember their experience. <br>
