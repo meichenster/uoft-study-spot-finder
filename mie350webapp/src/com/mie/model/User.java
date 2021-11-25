@@ -5,7 +5,7 @@ import java.util.Date;
 public class User {
 	/**
 	 * This class contains all of the relevant information, and getter/setter
-	 * methods for the Student object.
+	 * methods for the User object.
 	 */
 
 	private String username;
@@ -18,7 +18,7 @@ public class User {
 	private String program;
 	private int yearOfStudy;
 	private Date dateCreated;
-
+	private boolean valid;
 
 	public String getUsername() {
 		return username;
@@ -88,9 +88,19 @@ public class User {
 	// 	this.email = email;
 	// }
 
+	public boolean isValid() {
+		return valid;
+	}
+
+	public void setValid(boolean newValid) {
+		valid = newValid;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Student [username=" + username + ", faculty=" + faculty
-				+ ", program=" + program + ", year of study=" + yearOfStudy + "]";
+		return "Student [username=" + username + ", password=" + password + 
+		", faculty=" + faculty + ", program=" + program + 
+		", year of study=" + yearOfStudy + ", date created=" + dateCreated + "]";
 	}
 }
