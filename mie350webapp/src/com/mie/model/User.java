@@ -1,5 +1,6 @@
 package com.mie.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class User {
@@ -11,14 +12,13 @@ public class User {
 	private String username;
 	private String password;
 
-	// private String email;
-	// private String firstName;
-	// private String lastName;
 	private String faculty;
 	private String program;
 	private int yearOfStudy;
 	private Date dateCreated;
 	private boolean valid;
+	private ArrayList<StudySpot> favStudySpots;
+	private ArrayList<StudySpot> savedStudySpots;
 
 	public String getUsername() {
 		return username;
@@ -35,39 +35,27 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	// public String getFirstName() {
-	// 	return firstName;
-	// }
-
-	// public void setFirstName(String firstName) {
-	// 	this.firstName = firstName;
-	// }
-
-	// public String getLastName() {
-	// 	return lastName;
-	// }
-
-	// public void setLastName(String lastName) {
-	// 	this.lastName = lastName;
-	// }
 
 	public String getFaculty() {
 		return faculty;
 	}
-	public String getProgram() {
-		return program;
-	}
-	public int yearOfStudy() {
-		return yearOfStudy;
-	}
-
+	
 	public void setFaculty(String faculty) {
 		this.faculty = faculty;
+	}
+
+	public String getProgram() {
+		return program;
 	}
 
 	public void setProgram(String program) {
 		this.program = program;
 	}
+
+	public int getYearOfStudy() {
+		return yearOfStudy;
+	}
+
 	public void setYearOfStudy(int yearOfStudy) {
 		this.yearOfStudy = yearOfStudy;
 	}
@@ -80,14 +68,6 @@ public class User {
 		this.dateCreated = dateCreated;
 	}
 
-	// public String getEmail() {
-	// 	return email;
-	// }
-
-	// public void setEmail(String email) {
-	// 	this.email = email;
-	// }
-
 	public boolean isValid() {
 		return valid;
 	}
@@ -96,6 +76,47 @@ public class User {
 		valid = newValid;
 	}
 
+	public ArrayList<StudySpot> getFavStudySpots() {
+		return favStudySpots;
+	}
+
+	public void setFavStudySpots(ArrayList<StudySpot> favStudySpots) {
+		this.favStudySpots = favStudySpots;
+	}
+
+	public ArrayList<StudySpot> getSavedStudySpots() {
+		return savedStudySpots;
+	}
+
+	public void setSavedStudySpots(ArrayList<StudySpot> savedStudySpots) {
+		this.savedStudySpots = savedStudySpots;
+	}
+
+	
+	// methods
+	public StudySpot getSavedStudySpot(int index) {
+		return savedStudySpots.get(index);
+	}
+
+	public StudySpot getFavStudySpot(int index) {
+		return favStudySpots.get(index);
+	}
+
+	public void addSavedStudySpot(StudySpot savedSpot) {
+		savedStudySpots.add(savedSpot);
+	}
+
+	public void addFavStudySpot(StudySpot favSpot) {
+		favStudySpots.add(favSpot);
+	}
+
+	public void removeSavedStudySpot(StudySpot savedSpot) {
+		savedStudySpots.remove(savedStudySpots.indexOf(savedSpot));
+	}
+
+	public void removeFavStudySpot(StudySpot favSpot) {
+		favStudySpots.remove(favStudySpots.indexOf(favSpot));
+	}
 
 	@Override
 	public String toString() {

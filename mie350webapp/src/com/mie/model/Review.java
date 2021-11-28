@@ -16,60 +16,60 @@ public class Review {
     private String review;
 
     public int getReviewID() {
-            return reviewID;
-        }
+        return reviewID;
+    }
 
-        public void setReviewID(int reviewID) {
-            this.reviewID = reviewID;
-        }
+    public void setReviewID(int reviewID) {
+        this.reviewID = reviewID;
+    }
 
-        public int getLocationID() {
-            return locationID;
-        }
+    public int getLocationID() {
+        return locationID;
+    }
 
-        public void setLocationID(int locationID) {
-            this.locationID = locationID;
-        }
+    public void setLocationID(int locationID) {
+        this.locationID = locationID;
+    }
 
-        public String getUsername() {
-            return username;
-        }
+    public String getUsername() {
+        return username;
+    }
 
-        public void setUsername(String username) {
-            this.username = username;
-        }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-        public String getLocation() {
-            return location;
-        }
+    public String getLocation() {
+        return location;
+    }
 
-        public void setLocation(String location) {
-            this.location = location;
-        }
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
-        public double getRating() {
-            return rating;
-        }
+    public double getRating() {
+        return rating;
+    }
 
-        public void setRating(double rating) {
-            this.rating = rating;
-        }
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
 
-        public boolean isRecommended() {
-            return isRecommended;
-        }
+    public boolean isRecommended() {
+        return isRecommended;
+    }
 
-        public void setRecommended(boolean isRecommended) {
-            this.isRecommended = isRecommended;
-        }
+    public void setRecommended(boolean isRecommended) {
+        this.isRecommended = isRecommended;
+    }
 
-        public String getReview() {
-            return review;
-        }
+    public String getReview() {
+        return review;
+    }
 
-        public void setReview(String review) {
-            this.review = review;
-        }
+    public void setReview(String review) {
+        this.review = review;
+    }
 
 
     @Override

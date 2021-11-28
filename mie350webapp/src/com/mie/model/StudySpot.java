@@ -25,8 +25,8 @@ public class StudySpot {
     private boolean hasGroupTables;
     private boolean isIndoors;
 
-    private double rating;
-    private ArrayList<Integer> ratings;
+    private double rating; // total rating
+    private ArrayList<Integer> ratings; // list of individual user ratings
 
     // getters and setters
     public int getLocationID() {
@@ -157,7 +157,7 @@ public class StudySpot {
 
     @Override
 	public String toString() {
-		return "Student [name=" + name + ", area=" + area + 
+		return "Study Spot [name=" + name + ", area=" + area + 
 		", location=" + location + ", link=" + link + 
 		", capacity=" + capacity + ", opening time=" + openingTime + 
         ", closing time=" + closingTime + ", main major=" + mainMajor +
