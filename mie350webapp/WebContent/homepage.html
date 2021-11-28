@@ -46,16 +46,16 @@
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
           <li><a class="nav-link scrollto" href="about.html">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Search Study Spots</a></li>
-          <li><a class="nav-link scrollto " href="Reviews.html">Reviews</a></li>
           <li class="dropdown"><a href="#"><span>Study Spots</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Find a Study Spot</a></li>
-              <li><a href="#">Study Spot Reviews</a></li>
+              <li><a href="Reviews.html">Study Spot Reviews</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="contact.html">Contact Us</a></li>
-          <li><a class="getstarted scrollto" href="#about">Log In</a></li>
+          <li>
+			  <a class="getstarted scrollto" href="#about" data-bs-toggle="modal" data-bs-target="#feedbackModal">Log In</a>
+		  </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -71,7 +71,6 @@
         <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1>UofT Study&nbsp; Spotter&nbsp;</h1>
           <h2>Your guide to the best study spots on campus</h2>
-          <div><a href="#about" class="btn-get-started scrollto">Log In&nbsp;</a></div>
         </div>
         <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150"> </div>
       </div>
@@ -108,14 +107,63 @@
               <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
             </div>
           </div>
-          <div class="image col-lg-6 order-1 order-lg-2 " data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/features.svg" alt="" class="img-fluid">
-          </div>
         </div>
 
       </div>
     </section><!-- End Features Section -->
-
+        <!-- Feedback Modal-->
+        <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-gradient-primary-to-secondary p-4">
+                        <h5 class="modal-title font-alt text-black" id="feedbackModalLabel">Log In</h5>
+                        <button class="btn-close btn-close-black" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body border-0 p-4">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Username</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Password</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+	  <!-- ======= End of Feedback Modal ======= --> 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
