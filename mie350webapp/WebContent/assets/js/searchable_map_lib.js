@@ -162,6 +162,10 @@ var SearchableMapLib = {
           SearchableMapLib.currentPinpoint = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];
           $.address.parameter('address', encodeURIComponent(address));
           $.address.parameter('radius', SearchableMapLib.radius);
+          $.address.parameter('capacity', SearchableMapLib.capacity);
+          $.address.parameter('computers', SearchableMapLib.computers);
+          $.address.parameter('food', SearchableMapLib.food);
+          $.address.parameter('grouptables', SearchableMapLib.grouptables);
           SearchableMapLib.address = address;
           SearchableMapLib.createSQL(); // Must call create SQL before setting parameters.
           SearchableMapLib.setZoom();
