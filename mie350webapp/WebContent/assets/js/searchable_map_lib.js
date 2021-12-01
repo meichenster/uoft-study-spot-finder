@@ -155,31 +155,7 @@ var SearchableMapLib = {
       SearchableMapLib.radius = 805;
     }
 
-    if (address != "") {
 
-      geocoder.geocode( { 'address': address }, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          SearchableMapLib.currentPinpoint = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];
-          $.address.parameter('address', encodeURIComponent(address));
-          $.address.parameter('radius', SearchableMapLib.radius);
-          $.address.parameter('capacity', SearchableMapLib.capacity);
-          $.address.parameter('computers', SearchableMapLib.computers);
-          $.address.parameter('food', SearchableMapLib.food);
-          $.address.parameter('grouptables', SearchableMapLib.grouptables);
-          SearchableMapLib.address = address;
-          SearchableMapLib.createSQL(); // Must call create SQL before setting parameters.
-          SearchableMapLib.setZoom();
-          SearchableMapLib.addIcon();
-          SearchableMapLib.addCircle();
-          SearchableMapLib.renderMap();
-          SearchableMapLib.renderList();
-          SearchableMapLib.getResults();
-        }
-        else {
-          alert("We could not find your address: " + status);
-        }
-      });
-    }
     else { //search without geocoding callback
       SearchableMapLib.map.setView(new L.LatLng( SearchableMapLib.map_centroid[0], SearchableMapLib.map_centroid[1] ), SearchableMapLib.defaultZoom)
       SearchableMapLib.createSQL(); // Must call create SQL before setting parameters.
