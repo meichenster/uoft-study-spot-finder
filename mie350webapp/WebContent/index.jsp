@@ -87,26 +87,33 @@
 			<div class="container" data-aos="fade-up">
 	  
 			  <div class="section-title">
-				<h2>IDK</h2>
-				<p>Some text!!!</p>
+				<h2>Welcome to uoft studyspotter!&nbsp; &nbsp; &nbsp;</h2>
+				<p>Over the past year, students haven't been able to come to campus due to the COVID-19 pandemic. Many of the current first-year and second-year students have never been on campus before, and the upper-year students may have not had the opportunity to explore the campus enough in their first or second year. In order to address the students’ unfamiliarity with the campus, we want to help students find the best study spots on and around UofT’s St. George campus. In addition, this can aid students in finding new areas to meet for group meetings. To get started, 'Log In' or select a link from the 'Study Spots' dropdown.</p>
 			  </div>
 	  
 			  <div class="row">
 				<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-lg-center">
 				  <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-					<i class="bx bx-receipt"></i>
-					<h4>some thing</h4>
-					<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+					<i class="bx bx-location-plus"></i>
+					<h4>Find your next meeting location</h4>
+					<p>Search through our database of study spots to find the best location for your meeting needs&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
 				  </div>
 				  <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
-					<i class="bx bx-cube-alt"></i>
-					<h4>something</h4>
-					<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+					<i class="bx bx-time"></i>
+					<h4>Discover&nbsp; a new study spot in seconds</h4>
+					<p>Waste less time looking for your next study spot and more time reviewing your notes&nbsp;</p>
 				  </div>
-				  <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="300">
-					<i class="bx bx-images"></i>
-					<h4>something</h4>
-					<p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+				</div>
+				<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-lg-center">
+				  <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+					<i class="bx bx-receipt"></i>
+					<h4>Review and rate study spots&nbsp;</h4>
+					<p>Read and write reviews for study spots from our extensive database to discover the best location to visit.&nbsp; &nbsp; &nbsp;</p>
+				  </div>
+				  <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
+					<i class="bx bx-log-in-circle"></i>
+					<h4>Save your favorite study spots</h4>
+					<p>Create an account to save your favorite study spots to your profile and quickly access them.</p>
 				  </div>
 				</div>
 			  </div>
