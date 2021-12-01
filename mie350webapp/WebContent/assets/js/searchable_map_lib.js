@@ -146,6 +146,10 @@ var SearchableMapLib = {
     SearchableMapLib.clearSearch();
     var address = $("#search-address").val();
     SearchableMapLib.radius = $("#search-radius").val();
+    SearchableMapLib.capacity = $("#search-capacity").val();
+    SearchableMapLib.computers = $("#search-computers").val();
+    SearchableMapLib.food = $("#search-food").val();
+    SearchableMapLib.grouptables = $("#search-grouptables").val();
 
     if (SearchableMapLib.radius == null && address != "") {
       SearchableMapLib.radius = 805;

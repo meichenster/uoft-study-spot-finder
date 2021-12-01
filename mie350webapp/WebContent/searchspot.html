@@ -102,33 +102,53 @@
 
           <div class="card bg-light">
             <div class="card-body">
+			  <div class="row">
+					<div class="col-md-12">
+					  <div class="form-group">
+						  Search by name
+						  <input class="form-control" id="search-name" placeholder="Enter a business or organization name" type="text">
+					  </div>
+					</div>
+				  </div>
               <div class="row">
-                <div class="col-md-8">
-                  <div class="form-group">
-                      Near an address
-                      <input class="form-control" id="search-address" placeholder="Enter an address" type="text">
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="form-group">
-                      Within
+                <div class="col-md-3">
+					<div class="form-group">
+                      Capacity
                       <select id="search-radius" class="form-control">
-                        <option value="400">2 blocks</option>
-                        <option value="805">1/2 mile</option>
-                        <option value="1610">1 mile</option>
-                        <option value="3220">2 miles</option>
-                        <option value="8050">5 miles</option>
+                        <option value="50+">50+</option>
+                        <option value="30-50">30-50</option>
+                        <option value="1-10">1-10</option>
                       </select>
                   </div>
                 </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12">
+				  <div class="col-md-3">
+					<div class="form-group">
+                      Computers
+                      <select id="search-radius" class="form-control">
+                        <option>  </option>						  
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
                   <div class="form-group">
-                      Search by name
-                      <input class="form-control" id="search-name" placeholder="Enter a business or organization name" type="text">
+                      Food
+                      <select id="search-radius" class="form-control">
+                        <option>   </option>						  
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
+                  </div>
+                </div>
+				<div class="col-md-3">
+                  <div class="form-group">
+                      Tables
+                      <select id="search-radius" class="form-control">
+                        <option>   </option>						  
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
                   </div>
                 </div>
               </div>
