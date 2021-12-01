@@ -24,7 +24,7 @@ var SearchableMapLib = {
   initialize: function(options){
     options = options || {};
 
-    SearchableMapLib.map_centroid = options.map_centroid || [41.881832, -87.623177],
+    SearchableMapLib.map_centroid = options.map_centroid || [43.660785, -79.396039],
     SearchableMapLib.defaultZoom = options.defaultZoom || 9,
     SearchableMapLib.filePath = options.filePath || "",
     SearchableMapLib.fileType = options.fileType || "csv",

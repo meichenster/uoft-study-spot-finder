@@ -1,4 +1,4 @@
-Location ID,Latitude,Longitude,Street,Capacity,Opening time,Closing time,Main discipline/major there,Does it Have computers,Does it have food spots (Yes/No),Does it have group tables? (Yes/No),Indoors or Outdoors,Location,,
+Location ID,Latitude,Longitude,Street1,Capacity,Opening time,Closing time,Main discipline/major there,Does it Have computers,Does it have food spots (Yes/No),Does it have group tables? (Yes/No),Indoors or Outdoors,Location,,
 1,43.6600106,-79.3948345,"10 King's College Rd, Toronto, ON M5S 3G4, Canada",50+,24hr,24hr,Engineering,No,Yes,Yes,Indoors,The Pit,,
 2,43.6627535,-79.3986860,"100 St George St, Toronto, ON M5S 3G3, Canada",50+,11:00,17:00,Arts and Science,No,Yes,Yes,Indoors,Sids Cafe,,
 3,43.6631657,-79.3946920,"Students Union, 12 Hart House Cir, Toronto, ON M5S 3J9, Canada",50+,9:00,17:00,All Disciplines,No,No,Yes,Outdoors,University of Toronto Students Union,,
