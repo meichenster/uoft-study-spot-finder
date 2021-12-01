@@ -12,7 +12,7 @@ $(function() {
     fileType: 'csv',
     recordName: 'study spots',
     recordNamePlural: 'study spots',
-    map_centroid: [41.85754, -87.66231],
+    map_centroid: [43.660785, -79.396039],
     defaultZoom:  11,
     defaultRadius: 1610,
     debug: false,
