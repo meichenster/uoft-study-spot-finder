@@ -271,6 +271,30 @@ var SearchableMapLib = {
     }
 
     //-----custom filters-----
+    var capacity_search = $("#search-capacity").val().replace("'", "\\'");
+    if (capacity_search != '') {
+      SearchableMapLib.currentResults.features = $.grep(SearchableMapLib.currentResults.features, function(r) {
+          return r.properties["Capacity"].toLowerCase().indexOf(capacity_search.toLowerCase()) > -1;
+        });
+    }
+    var computers_search = $("#search-computers").val().replace("'", "\\'");
+    if (computers_search != '') {
+      SearchableMapLib.currentResults.features = $.grep(SearchableMapLib.currentResults.features, function(r) {
+          return r.properties["Computers"].toLowerCase().indexOf(computers_search.toLowerCase()) > -1;
+        });
+    }
+    var food_search = $("#search-food").val().replace("'", "\\'");
+    if (food_search != '') {
+      SearchableMapLib.currentResults.features = $.grep(SearchableMapLib.currentResults.features, function(r) {
+          return r.properties["Food"].toLowerCase().indexOf(food_search.toLowerCase()) > -1;
+        });
+    }
+    var grouptables_search = $("#search-grouptables").val().replace("'", "\\'");
+    if (grouptables_search != '') {
+      SearchableMapLib.currentResults.features = $.grep(SearchableMapLib.currentResults.features, function(r) {
+          return r.properties["Area"].toLowerCase().indexOf(grouptables_search.toLowerCase()) > -1;
+        });
+    }
 
     //-----name search filter-----
     var name_search = $("#search-name").val().replace("'", "\\'");
