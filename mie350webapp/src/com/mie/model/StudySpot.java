@@ -165,7 +165,4 @@ public class StudySpot {
         ", group tables=" + hasGroupTables + ", isIndoors=" + isIndoors +
         ",rating=" + rating + "]";
 	}
-
-
-    
 }
