@@ -1,0 +1,39 @@
+Facility ID,Latitude,Longitude,Street1,Street2,City,State,Postal Code,Country,Facility Name,Capacity,Opening,Closing,Discipline,Computers,Food,Group Tables,Area
+1,43.6600106,-79.3948345,10 King's College Rd,, Toronto,ON,M5S3G4,Canada,The Pit,50+,24hr,24hr,Engineering,No,Yes,Yes,Indoors
+2,43.6627535,-79.398686,10 King's College Rd,, Toronto,ON,M5S3G4,Canada,Sids Cafe,50+,11:00,17:00,Arts and Science,No,Yes,Yes,Indoors
+3,43.6631657,-79.394692, 12 Hart House Cir,, Toronto,ON,M5S3J9,Canada,University of Toronto Students Union,50+,9:00,17:00,All Disciplines,No,No,Yes,Outdoors
+4,43.6614162,-79.4008207,Willcocks St,, Toronto,ON,M5S,Canada,Wilcocks Common,50+,24hr,24hr,All Disciplines,No,Yes,No,Outdoors
+5,43.6643163,-79.3915789,110 Wellesley St W,, Toronto,ON,M7A,Canada,Queens Park,50+,24hr,24hr,All Disciplines,No,Yes,No,Outdoors
+6,43.6523501,-79.3924847, Beverley St & McCaul Street,, Toronto,ON,M5T2W7,Canada,Grange Park,50+,24hr,24hr,All Disciplines,No,Yes,No,Outdoors
+7,43.6589698,-79.3955658, 184 College St,, Toronto,ON,M5S3E4,Canada,Chemical Engineering Common room,30-50,24hr,24hr,Chemical Engineering,No,No,Yes,Indoors
+8,43.6598852,-79.3963525,35 St George St,, Toronto,ON,M5S1A4,Canada,Civil Engineering Common room,30-50,24hr,24hr,Civil Engineering,No,No,Yes,Indoors
+9,43.6596184,-79.3969208,40 St George St,, Toronto,ON,M5S2E4,Canada,Engineering Science Common room,30-50,24hr,24hr,Engineering Science Engineering,No,No,Yes,Indoors
+10,43.6595391,-79.3934143, 170 College St #131,, Toronto,ON,M5S3E3,Canada,Mineral Engineering Common room,30-50,24hr,24hr,Mineral Engineering,No,No,Yes,Indoors
+11,43.6589698,-79.3955658, 184 College St,, Toronto,ON,M5S3E4,Canada,Material Science Engineering Common room,30-50,24hr,24hr,Material Science Engineering,No,No,Yes,Indoors
+12,43.6600106,-79.3948345,10 King's College Rd b650,, Toronto,ON,M5S3G8,Canada,Electrical and Computer Engineering Common room,30-50,24hr,24hr,Electrical and Computer Engineering,No,No,Yes,Indoors
+13,43.6595391,-79.3934143, 170 College St #225a,, Toronto,ON,M5S3000,Canada,Mechanical and Industrial Engineering Common room,30-50,24hr,24hr,Mechanical and Industrial Engineering,No,No,Yes,Indoors
+14,43.6600106,-79.3948345,10 King's College Rd,, Toronto,ON,M5S3G4,Canada,TrackOne Engineering Common room,1-10,24hr,24hr,TrackOne Engineering,No,No,Yes,Indoors
+15,43.6600106,-79.3948345,10 King's College Rd #1013,, Toronto,ON,M5S3G8,Canada,Stanford Fleming Computer Lab,30-50,9:00,20:00,Engineering,Yes,No,No,Indoors
+16,43.6598852,-79.3963525,35 St George St,, Toronto,ON,M5S1A4,Canada,Galbraith Computer Lab,30-50,9:00,18:00,Engineering,Yes,No,No,Indoors
+17,43.6589698,-79.3955658, 184 College St,, Toronto,ON,M5S3E4,Canada,Walberg Computer Lab,30-50,9:00,18:00,Engineering,Yes,No,No,Indoors
+18,43.659634,-79.3952951, 11 King's College Rd Rm 212,, Toronto,ON,M5S3J2,Canada,Engineering Annex Computer Lab,30-50,9:00,18:00,Engineering,Yes,No,No,Indoors
+19,43.6598835,-79.393147,164 College St,, Toronto,ON,M5S300,Canada,Mechanical and Industrial Engineering Computer Lab,30-50,9:00,18:00,Mechanical and Industrial Engineering,Yes,No,No,Indoors
+20,43.6601893,-79.3939752, 5 King's College Rd #325,, Toronto,ON,M5S3G8,Canada,Mechanical and Industrial Engineering Computer Lab,30-50,9:00,18:00,Mechanical and Industrial Engineering,Yes,No,No,Indoors
+21,43.6589698,-79.3955658, 184 College St,2nd Floor, Toronto,ON,M5S3E4,Canada,Chemical Engineering Computer Lab,1-10,9:00,18:00,Chemical Engineering,Yes,No,No,Indoors
+22,43.6595391,-79.3934143, 170 College St #130,, Toronto,ON,M5S3E3,Canada,Mineral Engineering Computer Lab,30-50,9:00,18:00,Mineral Engineering,Yes,No,No,Indoors
+23,43.6589698,-79.3955658, 184 College St,, Toronto,ON,M5S3E4,Canada,Material Science Engineering Computer Lab,30-50,9:00,18:00,Material Science Engineering,Yes,No,No,Indoors
+24,43.6595745,-79.3973729, 40 St George St #2124,, Toronto,ON,M5S2E4,Canada,Engineering Science Computer Lab,30-50,9:00,18:00,Engineering Science Engineering,Yes,No,No,Indoors
+25,43.6598852,-79.3963525,35 St George St,, Toronto,ON,M5S1A4,Canada,Civil Engineering Computer Lab,30-50,9:00,18:00,Civil Engineering,Yes,No,No,Indoors
+26,43.6630879,-79.3935197,3 Hart House Cir,, Toronto,ON,M5S3J9,Canada,Hart House Circle park,50+,24hr,24hr,All Disciplines,No,No,No,Outdoors
+27,43.6611612,-79.396539, 59 St George St,, Toronto,ON,M5S3H4,Canada,Knox Library,50+,8:30,21:00,Theology,Yes,No,Yes,Indoors
+28,43.6669317,-79.3919635,Victoria College,, Toronto,ON,M5S1K6,Canada,Victoria College E J Pratt Library,50+,9:00,21:45,Humanities and social sciences,Yes,No,Yes,Indoors
+29,43.6633404,-79.3955068, 15 King's College Cir Second Floor,, Toronto,ON,M5S3H7,Canada,University College Library,50+,9:00,21:00,Humanities and Social Sciences,Yes,No,Yes,Indoors
+30,43.6644223,-79.3993359,130 St George St,, Toronto,ON,M5S1A5,Canada,Robarts Library,50+,8:30,23:00,All Disciplines,Yes,Yes,Yes,Indoors
+31,43.6620982,-79.3937002, 9 King's College Cir,, Toronto,ON,M7A1A5,Canada,Gerstein Library,50+,8:30,23:00,Engineering,Yes,Yes,Yes,Indoors
+32,43.6593852,-79.4006447,1 Spadina Crescent,, Toronto,ON,M5S2J5,Canada,Eberhard Zeidler Library,30-50,9:00,21:00,Architecture,Yes,No,Yes,Indoors
+33,43.6654958,-79.3993594,2 Sussex Avenue 2nd Floor,, Toronto,ON,M5S1J5,Canada,Innis College Library,30-50,10:00,17:00,The Writing & Rhetoric Program and the Urban Studies Program,Yes,No,Yes,Indoors
+34,43.6666568,-79.3939433,78 Queens Park,, Toronto,ON,M5S2C5,Canada,Law Library (Bora Laskin),50+,9:00,21:00,Law,Yes,Yes,Yes,Indoors
+35,43.6617643,-79.400062,20 Willcocks St,, Toronto,ON,M5S1C6,Canada,New College Library (Ivey),50+,9:00,21:00,"Women’s Studies, Caribbean Studies, and African Studies",Yes,No,Yes,Indoors
+36,43.6648519,-79.3895167,113 St Joseph St,, Toronto,ON,M5S3C2,Canada,St. Michaels College - John M. Kelly Library,50+,8:30,23:30,Philosophy,Yes,Yes,Yes,Indoors
+37,43.6651403,-79.395542, 6 Hoskin Ave,, Toronto,ON,M5S1H8,Canada,Trinity College Library (John W Graham Library),50+,9:00,16:45,International Relations,Yes,No,Yes,Indoors
+38,43.6605241,-79.3996682,5 Bancroft Ave ,, Toronto,ON,M5S3J1,Canada,Earth Sciences Library (Noranda),50+,9:00,21:00,Earth Sciences,Yes,No,Yes,Indoors
