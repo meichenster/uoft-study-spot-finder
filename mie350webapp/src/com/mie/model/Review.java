@@ -78,7 +78,5 @@ public class Review {
                 + ", rating=" + rating + ", review=" + review + ", reviewID=" + reviewID + ", username=" + username
                 + "]";
     }
-
-
     
 }
