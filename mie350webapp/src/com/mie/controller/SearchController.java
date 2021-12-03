@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mie.dao.StudySpotDao;
-import com.mie.model.Student;
+import com.mie.model.StudySpot;
 
 public class SearchController extends HttpServlet {
 	/**

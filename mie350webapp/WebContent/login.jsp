@@ -81,16 +81,16 @@
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Login</h4>
-							<form method="POST" class="my-login-validation" novalidate="">
-								<div class="form-group" form action = "LoginController">
+							<form method="POST" class="my-login-validation" novalidate="" form action = "LoginController">
+								<div class="form-group">
 									<label for="password">Username&nbsp;</label>
-									<input id="password" type="password" class="form-control" name="username" value="" required autofocus>
+									<input id="password" type="text" class="form-control" name="username" value="" required autofocus>
 									<div class="invalid-feedback">
 										Username is invalid
 									</div>
 								</div>
 
-								<div class="form-group" form action = "LoginController">
+								<div class="form-group">
 									<label for="password">Password
 										<a href="forgot.html" class="float-right">
 											Forgot Password?
@@ -109,7 +109,7 @@
 									</div>
 								</div>
 
-								<div class="form-group m-0">
+								<div class="form-group m-0" value="Submit">
 									<button type="submit" class="btn btn-primary btn-block">
 										Login
 									</button>
