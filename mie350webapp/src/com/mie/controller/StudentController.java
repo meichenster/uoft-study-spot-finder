@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-// eeoiwfioewofnpwenfewrnvperinb
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mie.dao.StudentDao;
+import com.mie.dao.StudySpotDao;
 import com.mie.model.Student;
 
 public class StudentController extends HttpServlet {
@@ -31,14 +31,14 @@ public class StudentController extends HttpServlet {
 	private static String LIST_STUDENT_PUBLIC = "/listStudentPublic.jsp";
 	private static String LIST_STUDENT_ADMIN = "/listStudentAdmin.jsp";
 
-	private StudentDao dao;
+	private StudySpotDao dao;
 
 	/**
 	 * Constructor for this class.
 	 */
 	public StudentController() {
 		super();
-		dao = new StudentDao();
+		dao = new StudySpotDao();
 	}
 
 	protected void doGet(HttpServletRequest request,

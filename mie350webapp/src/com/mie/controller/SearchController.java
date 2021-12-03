@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mie.dao.StudentDao;
+import com.mie.dao.StudySpotDao;
 import com.mie.model.Student;
 
 public class SearchController extends HttpServlet {
@@ -25,14 +25,14 @@ public class SearchController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 	private static String SEARCH_USER = "/searchStudentResult.jsp";
-	private StudentDao dao;
+	private StudySpotDao dao;
 
 	/**
 	 * Constructor for this class.
 	 */
 	public SearchController() {
 		super();
-		dao = new StudentDao();
+		dao = new StudySpotDao();
 	}
 
 	protected void doPost(HttpServletRequest request,

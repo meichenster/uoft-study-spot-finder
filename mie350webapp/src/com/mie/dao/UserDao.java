@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.mie.util.DbUtil;
@@ -14,31 +15,31 @@ import com.mie.controller.*;
 
 import com.mie.util.*;
 
-public class MemberDao {
+public class UserDao {
 
 	/**
-	 * This class handles the Member objects and the login component of the web
+	 * This class handles the User objects and the login component of the web
 	 * app.
 	 */
 	static Connection currentCon = null;
 	static ResultSet rs = null;
 
-	public static Member login(Member member) {
+	public static User login(User user) {
 
 		/**
-		 * This method attempts to find the member that is trying to log in by
+		 * This method attempts to find the user that is trying to log in by
 		 * first retrieving the username and password entered by the user.
 		 */
 		Statement stmt = null;
 
-		String username = member.getUsername();
-		String password = member.getPassword();
+		String username = user.getUsername();
+		String password = user.getPassword();
 
 		/**
-		 * Prepare a query that searches the members table in the database
+		 * Prepare a query that searches the users table in the database
 		 * with the given username and password.
 		 */
-		String searchQuery = "select * from members where username='"
+		String searchQuery = "SELECT * from members where username='"
 				+ username + "' AND password='" + password + "'";
 
 		try {
@@ -55,21 +56,26 @@ public class MemberDao {
 			 */
 			
 			if (!more) {
-				member.setValid(false);
+				user.setValid(false);
 			}
 
 			/**
 			 * If the query results in an database entry that matches the
 			 * username and password, assign the appropriate information to
-			 * the Member object.
+			 * the User object.
 			 */
 			else if (more) {
-				String firstName = rs.getString("FirstName");
-				String lastName = rs.getString("LastName");
+				String faculty = rs.getString("Faculty");
+				String program = rs.getString("Program");
+				int yearOfStudy = rs.getInt("Year of study");
+				Date dateCreated = rs.getDate("Date created (account)");
 
-				member.setFirstName(firstName);
-				member.setLastName(lastName);
-				member.setValid(true);
+				user.setUsername(username);
+				user.setFaculty(faculty);
+				user.setProgram(program);
+				user.setYearOfStudy(yearOfStudy);
+				user.setDateCreated(dateCreated);
+				user.setValid(true);
 			}
 		}
 
@@ -78,9 +84,9 @@ public class MemberDao {
 					+ ex);
 		}
 		/**
-		 * Return the Member object.
+		 * Return the User object.
 		 */
-		return member;
+		return user;
 
 	}
 }
