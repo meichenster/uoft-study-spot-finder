@@ -47,14 +47,14 @@
 			<nav id="navbar" class="navbar">
 			  <ul>
 				<li><a class="nav-link scrollto active" href="index.jsp">Home</a></li>
-				<li><a class="nav-link scrollto" href="about.html">About</a></li>
+				<li><a class="nav-link scrollto" href="about.jsp">About</a></li>
 				<li class="dropdown"><a href="#"><span>Study Spots</span> <i class="bi bi-chevron-down"></i></a>
 				  <ul>
 					<li><a href="searchspot.html">Find a Study Spot</a></li>
 					<li><a href="Reviews.html">Study Spot Reviews</a></li>
 				  </ul>
 				</li>
-				<li><a class="nav-link scrollto" href="contact.html">Contact Us</a></li>
+				<li><a class="nav-link scrollto" href="contact.jsp">Contact Us</a></li>
 				<li>
 					<a class="getstarted scrollto" href="login.jsp">Log In</a>
 				</li>
