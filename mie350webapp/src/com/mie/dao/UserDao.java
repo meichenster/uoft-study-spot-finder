@@ -39,7 +39,7 @@ public class UserDao {
 		 * Prepare a query that searches the users table in the database
 		 * with the given username and password.
 		 */
-		String searchQuery = "SELECT * from members where username='"
+		String searchQuery = "SELECT * from 'User Information DB' INNER JOIN 'User AccountLogin DB' ON 'User Information DB'.username = 'User AccountLogin DB'.username WHERE username= '"
 				+ username + "' AND password='" + password + "'";
 
 		try {

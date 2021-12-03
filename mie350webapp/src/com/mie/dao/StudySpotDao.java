@@ -31,7 +31,7 @@ public class StudySpotDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into Study Spots DB(LocationID, Name, Area, Location, Google map link, Capacity, Opening time, Closing time, Main discipline/major there, Does it Have computers, Does it have food spots (Yes/No), Does it have group tables? (Yes/No), Indoors or Outdoors, Rating (1-5) [update]) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+					.prepareStatement("insert into Study Spots DB(Location ID, Name, Area, Location, Google map link, Capacity, Opening time, Closing time, Main discipline/major there, Does it Have computers, Does it have food spots (Yes/No), Does it have group tables? (Yes/No), Indoors or Outdoors, Rating (1-5) [update]) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			
 					// Parameters start with 1
 			preparedStatement.setInt(1, studyspot.getLocationID());
@@ -78,8 +78,8 @@ public class StudySpotDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("update Study Spots DB set firstname=?, lastname=?, dob=?, email=?"
-							+ " where locationID=?");
+					.prepareStatement("update 'Study Spots DB' set Name=?, Area=?, Location=?, 'Google map link'=?, 'Capacity'=?, 'Opening time'=?, 'Closing time'=?, 'Main discipline/major there'=?, 'Does it Have computers'=?, 'Does it have food spots (Yes/No)'=?, 'Does it have group tables? (Yes/No)'=?, 'Indoors or Outdoors'=?, 'Rating (1-5) [update]'=?"
+							+ " where 'Location ID'=?");
 			// Parameters start with 1
 			preparedStatement.setInt(1, studyspot.getLocationID());
 			preparedStatement.setString(2, studyspot.getName());
@@ -111,7 +111,7 @@ public class StudySpotDao {
 		try {
 			Statement statement = connection.createStatement();
 			// System.out.println("getting StudySpots from table");
-			ResultSet rs = statement.executeQuery("select * from Study Spots DB");
+			ResultSet rs = statement.executeQuery("select * from 'Study Spots DB'");
 			while (rs.next()) {
 				StudySpot studyspot = new StudySpot();
 				studyspot.setLocationID(rs.getInt("Location ID"));
@@ -147,7 +147,7 @@ public class StudySpotDao {
 		StudySpot studyspot = new StudySpot();
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Study Spots DB where locationID?");
+					.prepareStatement("select * from 'Study Spots DB' where 'Location ID'?");
 			preparedStatement.setInt(1, locationID);
 			ResultSet rs = preparedStatement.executeQuery();
 
@@ -182,7 +182,7 @@ public class StudySpotDao {
 		List<StudySpot> StudySpots = new ArrayList<StudySpot>();
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Study Spots DB where Name LIKE ? OR Area LIKE ? OR Location LIKE ? OR mainMajor LIKE ?");
+					.prepareStatement("select * from 'Study Spots DB' where Name LIKE ? OR Area LIKE ? OR Location LIKE ? OR 'Main discipline/major there' LIKE ?");
 
 			preparedStatement.setString(1, "%" + keyword + "%");
 			preparedStatement.setString(2, "%" + keyword + "%");
