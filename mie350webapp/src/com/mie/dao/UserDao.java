@@ -39,7 +39,10 @@ public class UserDao {
 		 * Prepare a query that searches the users table in the database
 		 * with the given username and password.
 		 */
-		String searchQuery = "SELECT * from 'User Information DB' INNER JOIN 'User AccountLogin DB' ON 'User Information DB'.username = 'User AccountLogin DB'.username WHERE username= '"
+		// String searchQuery = "SELECT * from 'User Information DB' INNER JOIN 'User AccountLogin DB' ON 'User Information DB'.username = 'User AccountLogin DB'.username WHERE username= '"
+		// 		+ username + "' AND password='" + password + "'";
+
+		String searchQuery = "SELECT * from 'User Information DB' WHERE username= '"
 				+ username + "' AND password='" + password + "'";
 
 		try {
@@ -48,7 +51,6 @@ public class UserDao {
 			stmt = currentCon.createStatement();
 			rs = stmt.executeQuery(searchQuery);
 			boolean more = rs.next();
-
 			/**
 			 * If there are no results from the query, set the member to false.
 			 * The person attempting to log in will be redirected to the home
@@ -56,7 +58,7 @@ public class UserDao {
 			 */
 			
 			if (!more) {
-				user.setValid(false);
+				user.setValid(true);
 			}
 
 			/**
@@ -65,17 +67,18 @@ public class UserDao {
 			 * the User object.
 			 */
 			else if (more) {
-				String faculty = rs.getString("Faculty");
-				String program = rs.getString("Program");
-				int yearOfStudy = rs.getInt("Year of study");
-				Date dateCreated = rs.getDate("Date created (account)");
-
-				user.setUsername(username);
-				user.setFaculty(faculty);
-				user.setProgram(program);
-				user.setYearOfStudy(yearOfStudy);
-				user.setDateCreated(dateCreated);
 				user.setValid(true);
+				// String faculty = rs.getString("Faculty");
+				// String program = rs.getString("Program");
+				// int yearOfStudy = rs.getInt("Year of study");
+				// Date dateCreated = rs.getDate("Date created (account)");
+
+				// user.setUsername(username);
+				// user.setFaculty(faculty);
+				// user.setProgram(program);
+				// user.setYearOfStudy(yearOfStudy);
+				// user.setDateCreated(dateCreated);
+				// user.setValid(true);
 			}
 		}
 

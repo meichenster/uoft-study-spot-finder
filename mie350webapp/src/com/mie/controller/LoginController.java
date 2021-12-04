@@ -37,6 +37,7 @@ public class LoginController extends HttpServlet {
 			 * If the isValid value is true, assign session attributes to the
 			 * current member.
 			 */
+
 			if (user.isValid()) {
 
 				HttpSession session = request.getSession(true);
