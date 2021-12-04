@@ -23,7 +23,7 @@ public class UserDao {
 	 */
 	static Connection currentCon = null;
 	static ResultSet rs = null;
-
+	
 	public static User login(User user) {
 
 		/**
@@ -31,7 +31,6 @@ public class UserDao {
 		 * first retrieving the username and password entered by the user.
 		 */
 		Statement stmt = null;
-
 		String username = user.getUsername();
 		String password = user.getPassword();
 
@@ -42,9 +41,9 @@ public class UserDao {
 		// String searchQuery = "SELECT * from 'User Information DB' INNER JOIN 'User AccountLogin DB' ON 'User Information DB'.username = 'User AccountLogin DB'.username WHERE username= '"
 		// 		+ username + "' AND password='" + password + "'";
 
-		String searchQuery = "SELECT * from 'User Information DB' WHERE username= '"
-				+ username + "' AND password='" + password + "'";
-
+		String searchQuery = "SELECT * from 'User_Account_Login_DB' WHERE Username= '"
+				+ username + "' AND Password='" + password + "'";
+		System.out.println("lol");
 		try {
 			// connect to DB
 			currentCon = DbUtil.getConnection();
@@ -83,7 +82,7 @@ public class UserDao {
 		}
 
 		catch (Exception ex) {
-			System.out.println("Log In failed: An Exception has occurred! "
+			System.out.println("Log In failed: An Exception has occurred! dasdsada"
 					+ ex);
 		}
 		/**

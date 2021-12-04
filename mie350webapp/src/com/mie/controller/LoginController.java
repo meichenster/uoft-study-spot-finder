@@ -71,7 +71,7 @@ public class LoginController extends HttpServlet {
 			/**
 			 * Print out any errors.
 			 */
-			System.out.println(theException);
+			System.out.println("hi");
 		}
 	}
 }
