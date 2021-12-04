@@ -1,6 +1,13 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "mie350webapp/WebContent/WEB-INF/lib/javax.servlet.jar"
+        "mie350webapp/WebContent/WEB-INF/lib/javax.servlet.jar",
+        "mie350webapp/WebContent/WEB-INF/lib/commons-lang-2.6.jar",
+        "mie350webapp/WebContent/WEB-INF/lib/commons-logging-1.1.1.jar",
+        "mie350webapp/WebContent/WEB-INF/lib/hsqldb.jar",
+        "mie350webapp/WebContent/WEB-INF/lib/jackcess-2.1.3.jar",
+        "mie350webapp/WebContent/WEB-INF/lib/jstl.jar",
+        "mie350webapp/WebContent/WEB-INF/lib/standard.jar",
+        "mie350webapp/WebContent/WEB-INF/lib/ucanaccess-4.0.2.jar"
     ]
 }
