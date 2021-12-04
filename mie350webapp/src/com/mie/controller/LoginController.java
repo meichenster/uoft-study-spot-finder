@@ -25,15 +25,14 @@ public class LoginController extends HttpServlet {
 		 * Retrieve the entered username and password from the login.jsp form.
 		 */
 		User user = new User();
-		user.setUsername(request.getParameter("username"));
-		user.setPassword(request.getParameter("password"));
+		user.setUsername(request.getParameter("un"));
+		user.setPassword(request.getParameter("pw"));
 
 		try {
 			/**
 			 * Try to see if the member can log in.
 			 */
 			user = UserDao.login(user);
-
 			/**
 			 * If the isValid value is true, assign session attributes to the
 			 * current member.
@@ -59,6 +58,7 @@ public class LoginController extends HttpServlet {
 
 			else {
 				/**
+				 *
 				 * Otherwise, redirect the user to the invalid login page and
 				 * ask them to log in again with the proper credentials.
 				 */
