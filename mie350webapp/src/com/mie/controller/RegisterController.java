@@ -13,9 +13,9 @@ import com.mie.model.*;
 import com.mie.dao.*;
 
 /**
- * Servlet implementation for LoginController.
+ * Servlet implementation for RegisterController.
  * 
- * This class handles the login servlet and assigns session attributes for users
+ * This class handles the registration servlet then assigns session attributes for users
  * who succesfully log into the system.
  */
 public class RegisterController extends HttpServlet {
@@ -32,11 +32,13 @@ public class RegisterController extends HttpServlet {
 		user.setPassword(request.getParameter("pw"));
 		user.setFaculty(request.getParameter("fac"));
 		user.setProgram(request.getParameter("program"));
-		user.setYearOfStudy(request.getParameter("year"));
+		user.setYearOfStudy(Integer.parseInt(request.getParameter("year")));
 		user.setDateCreated(date);
 
+		// add user to the database
+		UserDao.addUser(user);
 
-
+		// then log in
 		try {
 			/**
 			 * Try to see if the member can log in.
@@ -57,6 +59,7 @@ public class RegisterController extends HttpServlet {
 				session.setAttribute("program", user.getProgram());
 				session.setAttribute("yearOfStudy", user.getYearOfStudy());
 				session.setAttribute("dateCreated", user.getDateCreated());
+
 				/**
 				 * Redirect to the members-only home page.
 				 */
