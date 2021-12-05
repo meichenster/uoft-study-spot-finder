@@ -17,7 +17,6 @@ public class User {
 	private int yearOfStudy;
 	private Date dateCreated;
 	private boolean valid;
-	private ArrayList<StudySpot> favStudySpots;
 	private ArrayList<StudySpot> savedStudySpots;
 
 	public String getUsername() {
@@ -76,14 +75,6 @@ public class User {
 		valid = newValid;
 	}
 
-	public ArrayList<StudySpot> getFavStudySpots() {
-		return favStudySpots;
-	}
-
-	public void setFavStudySpots(ArrayList<StudySpot> favStudySpots) {
-		this.favStudySpots = favStudySpots;
-	}
-
 	public ArrayList<StudySpot> getSavedStudySpots() {
 		return savedStudySpots;
 	}
@@ -97,24 +88,12 @@ public class User {
 		return savedStudySpots.get(index);
 	}
 
-	public StudySpot getFavStudySpot(int index) {
-		return favStudySpots.get(index);
-	}
-
 	public void addSavedStudySpot(StudySpot savedSpot) {
 		savedStudySpots.add(savedSpot);
 	}
 
-	public void addFavStudySpot(StudySpot favSpot) {
-		favStudySpots.add(favSpot);
-	}
-
 	public void removeSavedStudySpot(StudySpot savedSpot) {
 		savedStudySpots.remove(savedStudySpots.indexOf(savedSpot));
-	}
-
-	public void removeFavStudySpot(StudySpot favSpot) {
-		favStudySpots.remove(favStudySpots.indexOf(favSpot));
 	}
 
 	@Override
