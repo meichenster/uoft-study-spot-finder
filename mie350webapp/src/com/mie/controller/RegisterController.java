@@ -22,7 +22,6 @@ public class RegisterController extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, java.io.IOException {
-
 		/**
 		 * Retrieve the entered username and password from the login.jsp form.
 		 */

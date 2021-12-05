@@ -48,7 +48,7 @@
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Register</h4>
-							<form action = "LoginController" class="my-login-validation" novalidate="">
+							<form action = "RegisterController" class="my-login-validation" novalidate="">
 								<div class="form-group">
 									<label for="name">Username</label>
 									<input id="name" type="text" class="form-control" name="un" required autofocus>
@@ -67,6 +67,7 @@
 								<div class="form-group">
 									<label for="fac">Faculty</label>
 									<select name="fac" id="fac" class="form-control">
+										<option value=""></option>
 										<option value="Applied Science and Engineering">Applied Science and Engineering</option>
 										<option value="Architecture">Architecture</option>
 										<option value="Arts and Science">Arts and Science</option>
@@ -80,6 +81,7 @@
 								<div class="form-group">
 									<label for="program">Program</label>
 									<select name="program" id="program" class="form-control">
+										<option value=""></option>
 										<option value="Architecture">Architecture</option>
 										<option value="Chemical">Chemical</option>
 										<option value="Computer">Computer</option>
