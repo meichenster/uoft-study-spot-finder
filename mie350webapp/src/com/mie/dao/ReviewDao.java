@@ -28,7 +28,7 @@ public class ReviewDao {
 
 	public void addReview(Review review) {
 		/**
-		 * This method adds a new StudySpot to the database.
+		 * This method adds a new Review to the database.
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
@@ -118,10 +118,7 @@ public class ReviewDao {
 
 	public Review getReviewById(int reviewID) {
 		/**
-		 * This method retrieves a StudySpot by their reviewID number.
-		 * 
-		 * Currently not used in the sample web app, but code is left here for
-		 * your review.
+		 * This method retrieves a Review by their reviewID number.
 		 */
 		Review review = new Review();
 		try {
