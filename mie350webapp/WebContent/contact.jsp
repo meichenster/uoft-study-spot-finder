@@ -3,39 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Study Spotter</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Techie - v4.7.0
-  * Template URL: https://bootstrapmade.com/techie-free-skin-bootstrap-3/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+	<%@ include file="head.jsp"%> 
 
 <body>
 
@@ -44,21 +12,7 @@
     <div class="container d-flex align-items-center justify-content-between">
       <h1 class="logo"><a href="index.jsp">StudySpotter</a></h1>
 		
-     <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.jsp">Home</a></li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
-          <li class="dropdown"><a href="#"><span>Study Spots</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="searchspot.html">Find a Study Spot</a></li>
-              <li><a href="Reviews.html">Study Spot Reviews</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto active" href="contact.html">Contact Us</a></li>
-          <li><a class="getstarted scrollto" href="login.jsp">Log In</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      <%@ include file="navbar.jsp"%>
 
     </div>
   </header><!-- End Header -->
@@ -116,7 +70,7 @@
         <div class="row">
 
           <div class="col-lg-6 ">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.387390756238!2d-79.39814048425946!3d43.66091245994953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b35bbce062033%3A0xd41da48a5c00f99b!2sUniversity%20of%20Toronto!5e0!3m2!1sen!2sca!4v1638058962688!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.387390756238!2d-79.39814048425946!3d43.66091245994953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b35bbce062033%3A0xd41da48a5c00f99b!2sUniversity%20of%20Toronto!5e0!3m2!1sen!2sca!4v1638058962688!5m2!1sen!2sca" width="550" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
 
           <div class="col-lg-6">
@@ -151,34 +105,9 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-top">
-    </div>
-
-    <div class="container">
-
-
-
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+		<!-- ======= Footer ======= -->
+		<%@ include file="footer.jsp"%> 
+		<!-- End Footer -->
 </body>
 
 </html>

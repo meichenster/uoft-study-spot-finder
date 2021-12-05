@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR" import="com.mie.model.*"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +34,12 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
 </head>
 	<body>
@@ -41,22 +47,7 @@
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
       <h1 class="logo"><a href="index.jsp">StudySpotter</a></h1>	
-		<nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.jsp">Home</a></li>
-          <li><a class="nav-link scrollto" href="about.jsp">About</a></li>
-          <li class="dropdown active"><a href="#"><span>Study Spots</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="searchspot.html">Find a Study Spot</a></li>
-              <li><a href="Reviews.html">Study Spot Reviews</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="contact.jsp">Contact Us</a></li>
-          <li><a class="getstarted scrollto" href="login.jsp">Log In</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+	  <%@ include file="navbar.jsp"%>
     </div>
   </header><!-- End Header -->
 
@@ -81,10 +72,10 @@
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Login</h4>
-							<form method="POST" class="my-login-validation" novalidate="" form action = "LoginController">
+							<form action = "LoginController" class="my-login-validation" novalidate="">
 								<div class="form-group">
-									<label for="password">Username&nbsp;</label>
-									<input id="password" type="text" class="form-control" name="username" value="" required autofocus>
+									<label for="username">Username&nbsp;</label>
+									<input id="username" type="text" class="form-control" name="un" value="" required autofocus>
 									<div class="invalid-feedback">
 										Username is invalid
 									</div>
@@ -96,7 +87,7 @@
 											Forgot Password?
 										</a>
 									</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<input id="password" type="password" class="form-control" name="pw" required data-eye>
 								    <div class="invalid-feedback">
 								    	Password is required
 							    	</div>
@@ -109,7 +100,7 @@
 									</div>
 								</div>
 
-								<div class="form-group m-0" value="Submit">
+								<div class="form-group m-0">
 									<button type="submit" class="btn btn-primary btn-block">
 										Login
 									</button>
