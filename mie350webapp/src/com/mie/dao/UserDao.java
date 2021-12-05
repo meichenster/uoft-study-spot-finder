@@ -38,8 +38,6 @@ public class UserDao {
 		 * Prepare a query that searches the users table in the database
 		 * with the given username and password.
 		 */
-		// String searchQuery = "SELECT * from 'User Information DB' INNER JOIN 'User AccountLogin DB' ON 'User Information DB'.username = 'User AccountLogin DB'.username WHERE username= '"
-		// 		+ username + "' AND password='" + password + "'";
 
 		String searchQuery = "SELECT * from User_Information_DB INNER JOIN User_Account_Login_DB ON User_Information_DB.username = User_Account_Login_DB.username WHERE username= '"
 				+ username + "' AND password='" + password + "'";
@@ -119,7 +117,7 @@ public class UserDao {
 	public static void addUser(User user) {
 		try {
 			PreparedStatement preparedStatement = currentCon
-					.prepareStatement("insert into User_Login_DB(username, password) values (?, ?)");
+					.prepareStatement("insert into User_Account_Login_DB(username, password) values (?, ?)");
 			
 					// Parameters start with 1
 			preparedStatement.setString(1, user.getUsername());
