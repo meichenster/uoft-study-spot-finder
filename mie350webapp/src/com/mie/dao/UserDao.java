@@ -90,4 +90,26 @@ public class UserDao {
 		return user;
 
 	}
+	
+	public static User setUser(User user) {
+		String username = user.getUsername();
+		try {
+			String searchQuery ="SELECT * from User_Information_DB WHERE username= '"
+			+ username + "'";
+			Statement stmt = null;
+			currentCon = DbUtil.getConnection();
+			stmt = currentCon.createStatement();
+			rs = stmt.executeQuery(searchQuery);
+			while (rs.next()) {
+				user.setUsername(rs.getString("username"));
+				user.setFaculty(rs.getString("faculty"));
+				user.setProgram(rs.getString("program"));
+				user.setYearOfStudy(rs.getInt("year_of_study"));
+				user.setDateCreated(rs.getDate("account_creation_date"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
 }
