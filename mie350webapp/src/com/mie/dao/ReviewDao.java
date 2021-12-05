@@ -32,7 +32,7 @@ public class ReviewDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into 'Reviews DB'(Review ID, Location ID, Username, Location, Rating (out of 5), Recommend? (Yes/No), Review) values (?, ?, ?, ?, ?, ?, ?)");
+					.prepareStatement("insert into Reviews_DB(Review_ID, Location_ID, Username, Location, Rating_(out of 5), Recommend?_(Yes/No), Review) values (?, ?, ?, ?, ?, ?, ?)");
 			
 					// Parameters start with 1
 			preparedStatement.setInt(1, review.getReviewID());
@@ -55,7 +55,7 @@ public class ReviewDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("delete from Study Spots DB where Review ID=?");
+					.prepareStatement("delete from Study_Spots_DB where Review_ID=?");
 			// Parameters start with 1
 			preparedStatement.setInt(1, reviewID);
 			preparedStatement.executeUpdate();
@@ -71,8 +71,8 @@ public class ReviewDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("update 'Reviews DB' set 'Review ID'=?, 'Location ID'=?, 'Username'=?, 'Location'=?, 'Rating (out of 5)'=?, 'Recommend? (Yes/No)'=?, 'Review'=?" 
-					+ " where Review ID=?");
+					.prepareStatement("update Reviews_DB set Review_ID=?, Location_ID=?, Username=?, Location=?, Rating_(out of 5)=?, Recommend?_(Yes/No)=?, Review=?" 
+					+ " where Review_ID=?");
 			// Parameters start with 1
 			preparedStatement.setInt(1, review.getReviewID());
 			preparedStatement.setInt(2, review.getLocationID());
@@ -97,7 +97,7 @@ public class ReviewDao {
 		try {
 			Statement statement = connection.createStatement();
 			// System.out.println("getting Reviews from table");
-			ResultSet rs = statement.executeQuery("select * from 'Reviews DB'");
+			ResultSet rs = statement.executeQuery("select * from Reviews_DB");
 			while (rs.next()) {
 				Review review = new Review();
 				review.setReviewID(rs.getInt("Review ID"));
@@ -126,7 +126,7 @@ public class ReviewDao {
 		Review review = new Review();
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Study Spots DB where locationID?");
+					.prepareStatement("select * from Study_Spots_DB where locationID?");
 			preparedStatement.setInt(1, reviewID);
 			ResultSet rs = preparedStatement.executeQuery();
 
