@@ -38,22 +38,16 @@
 	<%@ include file="navbar_loggedin.jsp"%>
 
 	<%
-		Member member = (Member) session.getAttribute("currentSessionUser");
-
+		User user = (User) session.getAttribute("currentSessionUser");
 		String username = (String) session.getAttribute("username");
-		String firstname = (String) session.getAttribute("firstname");
-		String lastname = (String) session.getAttribute("lastname");
 	%>
 
 	<div class="container-fluid text-center">
 		<div class="row content">
-			<%@ include file="sidebar_loggedin.jsp"%>
 			<div class="col-sm-8 text-left">
 
 				<h1>
 					Welcome,
-					<%=firstname%>
-					<%=lastname%>!
 				</h1>
 
 
