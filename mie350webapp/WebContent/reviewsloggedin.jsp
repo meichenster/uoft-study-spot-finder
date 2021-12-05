@@ -9,8 +9,8 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.jsp">StudySpotter</a></h1>
-		  <%@ include file="navbar.jsp"%>
+      <h1 class="logo"><a href="indexloggedin.jsp">StudySpotter</a></h1>
+      <%@ include file="navbar_loggedin.jsp"%>
 
     </div>
   </header><!-- End Header -->
@@ -21,7 +21,7 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <ol>
-            <li><a href="index.jsp">Home</a></li>
+            <li><a href="indexloggedin.jsp">Home</a></li>
             <li>Study Spot Reviews</li>
           </ol>
         </div>
