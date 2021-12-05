@@ -68,9 +68,10 @@
 									<label for="fac">Faculty</label>
 									<select name="fac" id="fac" class="form-control">
 										<option value="Applied Science and Engineering">Applied Science and Engineering</option>
+										<option value="Architecture">Architecture</option>
 										<option value="Arts and Science">Arts and Science</option>
-										<option value="mercedes">Mercedes</option>
-										<option value="audi">Audi</option>
+										<option value="Kinesiology">Kinesiology</option>
+										<option value="Music">Music</option>
 									  </select>
 									<div class="invalid-feedback">
 										What's your Faculty?
@@ -78,7 +79,18 @@
 								</div>
 								<div class="form-group">
 									<label for="program">Program</label>
-									<input id="program" type="text" class="form-control" name="program" required data-eye>
+									<select name="program" id="program" class="form-control">
+										<option value="Architecture">Architecture</option>
+										<option value="Chemical">Chemical</option>
+										<option value="Computer">Computer</option>
+										<option value="Composition">Composition</option>
+										<option value="Economics">Economics</option>
+										<option value="Industrial">Industrial</option>
+										<option value="Kinesiology">Kinesiology</option>
+										<option value="Materials">Materials</option>
+										<option value="Mechanical">Mechanical</option>
+										<option value="TrackOne">TrackOne</option>
+									  </select>
 									<div class="invalid-feedback">
 										What's your Program?
 									</div>
