@@ -17,8 +17,8 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.jsp">StudySpotter</a></h1>
-      <%@ include file="navbar.jsp"%>
+      <h1 class="logo"><a href="indexloggedin.jsp">StudySpotter</a></h1>
+      <%@ include file="navbar_loggedin.jsp"%>
     </div>
   </header><!-- End Header -->
 
