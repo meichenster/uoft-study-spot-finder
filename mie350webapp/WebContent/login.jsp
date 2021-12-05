@@ -23,6 +23,7 @@
 		  </div>
 		</div>
 	  </section><!-- End Header 2 -->
+<section class="contact section-bg">
 <body class="my-login-page">
 	<section class="h-100">
 		<div class="container h-100">
@@ -30,7 +31,7 @@
 				<div class="card-wrapper">
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title">Login</h4>
+							<h4 class="card-title">Log in</h4>
 							<form action = "LoginController" class="my-login-validation" novalidate="">
 								<div class="form-group">
 									<label for="username">Username&nbsp;</label>
@@ -80,11 +81,9 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="js/my-login.js"></script>
 	
-	  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-    </div>
-  </footer><!-- End Footer -->
+		<!-- ======= Footer ======= -->
+		<%@ include file="footer.jsp"%> 
+		<!-- End Footer -->
 		</body>
 </body>
 </html>
