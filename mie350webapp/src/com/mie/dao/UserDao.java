@@ -41,7 +41,7 @@ public class UserDao {
 		// String searchQuery = "SELECT * from 'User Information DB' INNER JOIN 'User AccountLogin DB' ON 'User Information DB'.username = 'User AccountLogin DB'.username WHERE username= '"
 		// 		+ username + "' AND password='" + password + "'";
 
-		String searchQuery = "SELECT * from User_Account_DB INNER JOIN User_AccountLogin_DB ON User_Information_DB.username = User_AccountLogin_DB.username WHERE username= '"
+		String searchQuery = "SELECT * from User_Information_DB INNER JOIN User_Account_Login_DB ON User_Information_DB.username = User_Account_Login_DB.username WHERE username= '"
 				+ username + "' AND password='" + password + "'";
 		try {
 			// connect to DB
