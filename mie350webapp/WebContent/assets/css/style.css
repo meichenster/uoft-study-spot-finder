@@ -62,6 +62,14 @@ footer2 {
 		height: auto;
 	}
 }
+.button{
+  background: #5846f9;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

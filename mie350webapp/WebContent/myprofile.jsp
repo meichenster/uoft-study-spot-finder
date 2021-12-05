@@ -64,6 +64,7 @@
             </div>
           </div>
 		<p>Member Since: <%=dateCreated%></p>
+    <div class="text-center"><button action = "LogoutServlet">Log Out</button></div>
         </div>
       </div>
 
