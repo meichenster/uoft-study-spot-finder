@@ -24,7 +24,7 @@ public class SearchController extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static String SEARCH_USER = "/searchStudentResult.jsp";
+	private static String SEARCH_USER = "/searchStudySpot.jsp";
 	private StudySpotDao dao;
 
 	/**
@@ -45,7 +45,7 @@ public class SearchController extends HttpServlet {
 
 		RequestDispatcher view = request.getRequestDispatcher(SEARCH_USER);
 		request.setAttribute("keyword", keyword);
-		request.setAttribute("students", dao.getStudentByKeyword(keyword));
+		request.setAttribute("students", dao.getStudySpotByKeyword(keyword));
 		/**
 		 * Redirect to the search results page after the list of students
 		 * matching the keywords has been retrieved.

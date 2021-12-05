@@ -86,7 +86,7 @@ public class RegisterController extends HttpServlet {
 			/**
 			 * Print out any errors.
 			 */
-			System.out.println("hi");
+			System.out.println(theException);
 		}
 	}
 }
