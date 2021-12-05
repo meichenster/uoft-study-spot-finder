@@ -99,7 +99,7 @@
 								</div>
 								<div class="form-group">
 									<label for="yos">Year Of Study</label>
-									<input id="yos" type="number" class="form-control" name="year" required data-eye>
+									<input id="yos" type="text" class="form-control" name="year" required data-eye>
 									<div class="invalid-feedback">
 										What's your Year Of Study?
 									</div>
