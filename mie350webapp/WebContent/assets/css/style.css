@@ -553,7 +553,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  padding: 120px 0;
+  padding: 80px 0;
 }
 .about .content h3 {
   font-weight: 600;
@@ -1091,7 +1091,8 @@ section {
 --------------------------------------------------------------*/
 .faq {
   background: linear-gradient(42deg, #5846f9 0%, #7b27d8 100%);
-}
+  padding: 80px 0;
+  }
 .faq .section-title h2, .faq .section-title p {
   color: #fff;
 }
@@ -1166,6 +1167,10 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact {
+  padding: 80px 0;
+  background-color: #f9f8ff;
+}
 .contact .info-box {
   color: #444444;
   text-align: center;

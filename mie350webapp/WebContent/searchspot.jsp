@@ -24,7 +24,7 @@
         </div>
       </div>
     </section><!-- End Header 2 -->
-    <main role="main" class="container-fluid">
+    <main role="main" class="contact">
       <div class="row">
         <div class="col-md-4">
           <p>Search for a study spot and filter by your desired criteria&nbsp; &nbsp; </p>
