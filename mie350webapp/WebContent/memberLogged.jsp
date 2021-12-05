@@ -40,6 +40,7 @@
 	<%
 		User user = (User) session.getAttribute("currentSessionUser");
 		String username = (String) session.getAttribute("username");
+		StudySpot studyspot = (StudySpot) session.getAttribute("currentSessionUser");
 	%>
 
 	<div class="container-fluid text-center">
