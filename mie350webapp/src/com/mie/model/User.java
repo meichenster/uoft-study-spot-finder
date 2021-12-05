@@ -11,6 +11,7 @@ public class User {
 
 	private String username;
 	private String password;
+
 	private String faculty;
 	private String program;
 	private int yearOfStudy;
@@ -90,7 +91,6 @@ public class User {
 	public void setSavedStudySpots(ArrayList<StudySpot> savedStudySpots) {
 		this.savedStudySpots = savedStudySpots;
 	}
-
 	
 	// methods
 	public StudySpot getSavedStudySpot(int index) {

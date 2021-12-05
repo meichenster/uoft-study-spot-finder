@@ -126,7 +126,7 @@ public class ReviewDao {
 		Review review = new Review();
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Study_Spots_DB where locationID?");
+					.prepareStatement("select * from Study_Spots_DB where Review_ID=?");
 			preparedStatement.setInt(1, reviewID);
 			ResultSet rs = preparedStatement.executeQuery();
 

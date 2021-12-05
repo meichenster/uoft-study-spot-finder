@@ -56,7 +56,7 @@ public class UserDao {
 			 */
 			
 			if (!more) {
-				user.setValid(true);
+				user.setValid(false);
 			}
 
 			/**
@@ -66,17 +66,16 @@ public class UserDao {
 			 */
 			else if (more) {
 				user.setValid(true);
-				// String faculty = rs.getString("Faculty");
-				// String program = rs.getString("Program");
-				// int yearOfStudy = rs.getInt("Year of study");
-				// Date dateCreated = rs.getDate("Date created (account)");
+				String faculty = rs.getString("Faculty");
+				String program = rs.getString("Program");
+				int yearOfStudy = rs.getInt("Year of study");
+				Date dateCreated = rs.getDate("Date created (account)");
 
-				// user.setUsername(username);
-				// user.setFaculty(faculty);
-				// user.setProgram(program);
-				// user.setYearOfStudy(yearOfStudy);
-				// user.setDateCreated(dateCreated);
-				// user.setValid(true);
+				user.setFaculty(faculty);
+				user.setProgram(program);
+				user.setYearOfStudy(yearOfStudy);
+				user.setDateCreated(dateCreated);
+				user.setValid(true);
 			}
 		}
 
@@ -91,6 +90,7 @@ public class UserDao {
 
 	}
 	
+	// grab user from database
 	public static User setUser(User user) {
 		String username = user.getUsername();
 		try {
@@ -111,5 +111,35 @@ public class UserDao {
 			e.printStackTrace();
 		}
 		return user;
+	}
+
+	/* 
+	 * This method adds a new user to thee database
+	 */
+	public static void addUser(User user) {
+		try {
+			PreparedStatement preparedStatement = currentCon
+					.prepareStatement("insert into User_Login_DB(username, password) values (?, ?)");
+			
+					// Parameters start with 1
+			preparedStatement.setString(1, user.getUsername());
+			preparedStatement.setString(2, user.getPassword());
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		try {
+			PreparedStatement preparedStatement = currentCon
+					.prepareStatement("insert into User_Information_DB(username, faculty, program, year_of_study, date_created(account) values (?,?,?,?,?");
+			
+			preparedStatement.setString(1, user.getUsername());
+			preparedStatement.setString(2, user.getFaculty());
+			preparedStatement.setString(3, user.getProgram());
+			preparedStatement.setInt(4, user.getYearOfStudy());
+			preparedStatement.setDate(5, new java.sql.Date(user.getDateCreated().getTime()));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }
