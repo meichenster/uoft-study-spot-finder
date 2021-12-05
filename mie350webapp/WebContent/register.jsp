@@ -48,30 +48,55 @@
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Register</h4>
-							<form method="POST" class="my-login-validation" novalidate="">
+							<form action = "LoginController" class="my-login-validation" novalidate="">
 								<div class="form-group">
 									<label for="name">Username</label>
-									<input id="name" type="text" class="form-control" name="name" required autofocus>
+									<input id="name" type="text" class="form-control" name="un" required autofocus>
 									<div class="invalid-feedback">
-										What's your name?
+										What's your username?
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label for="password">Password</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<input id="password" type="password" class="form-control" name="pw" required data-eye>
 									<div class="invalid-feedback">
 										Password is required
 									</div>
 								</div>
-
+								<div class="form-group">
+									<label for="fac">Faculty</label>
+									<select name="fac" id="fac" class="form-control">
+										<option value="Applied Science and Engineering">Applied Science and Engineering</option>
+										<option value="Arts and Science">Arts and Science</option>
+										<option value="mercedes">Mercedes</option>
+										<option value="audi">Audi</option>
+									  </select>
+									<div class="invalid-feedback">
+										What's your Faculty?
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="program">Program</label>
+									<input id="program" type="text" class="form-control" name="program" required data-eye>
+									<div class="invalid-feedback">
+										What's your Program?
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="yos">Year Of Study</label>
+									<input id="yos" type="number" class="form-control" name="year" required data-eye>
+									<div class="invalid-feedback">
+										What's your Year Of Study?
+									</div>
+								</div>
 								<div class="form-group m-0">
 									<button type="submit" class="btn btn-primary btn-block">
 										Register
 									</button>
 								</div>
 								<div class="mt-4 text-center">
-									Already have an account? <a href="login.html">Login</a>
+									Already have an account? <a href="login.jsp">Login</a>
 								</div>
 							</form>
 						</div>

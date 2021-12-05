@@ -43,7 +43,6 @@ public class LoginController extends HttpServlet {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("username", user.getUsername());
 				session.setAttribute("faculty", user.getFaculty());
-				session.setAttribute("faculty", user.getFaculty());
 				session.setAttribute("program", user.getProgram());
 				session.setAttribute("yearOfStudy", user.getYearOfStudy());
 				session.setAttribute("dateCreated", user.getDateCreated());
