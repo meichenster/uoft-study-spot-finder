@@ -25,8 +25,6 @@ public class ReviewController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 	private static String REVIEWS = "/reviews.jsp";
-	private static String EDIT = "/editStudent.jsp";
-	private static String LIST_REVIEW = "/listStudentPublic.jsp";
 
 	private ReviewDao dao;
 
