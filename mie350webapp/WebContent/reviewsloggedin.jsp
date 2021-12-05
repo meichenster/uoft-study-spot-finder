@@ -36,9 +36,10 @@
 
         <div class="section-title">
           <h2>Reviews</h2>
-          <p>Here is some text</p>
+          <p>Read and write reviews about study spots on campu</p>
         </div>
-
+        <div class="text-center"><button class = "button" asction = "ReviewController">Write a Review</button>
+        </div>
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
