@@ -63,13 +63,17 @@ public class ReviewController extends HttpServlet {
 		 * the reviews.jsp page.
 		 */
 		Review review = new Review();
-		review.setReviewID(Integer.parseInt(request.getParameter("reviewID")));
-		review.setLocationID(Integer.parseInt(request.getParameter("locationID")));
-		review.setUsername(request.getParameter("username"));
-		review.setLocation(request.getParameter("location"));
-		review.setRating(Double.parseDouble(request.getParameter("rating")));
-		review.setRecommended(Boolean.parseBoolean(request.getParameter("recommend")));
-		review.setReview(request.getParameter("review"));
+		try {
+			review.setReviewID(Integer.parseInt(request.getParameter("reviewID")));
+			review.setLocationID(Integer.parseInt(request.getParameter("locationID")));
+			review.setUsername(request.getParameter("username"));
+			review.setLocation(request.getParameter("location"));
+			review.setRating(Double.parseDouble(request.getParameter("rating")));
+			review.setRecommended(Boolean.parseBoolean(request.getParameter("recommend")));
+			review.setReview(request.getParameter("review"));
+		} catch(NumberFormatException e) {
+			System.out.println(e);
+		}
 
 		dao.addReview(review);
 

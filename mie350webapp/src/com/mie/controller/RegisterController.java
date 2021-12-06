@@ -31,7 +31,11 @@ public class RegisterController extends HttpServlet {
 		user.setPassword(request.getParameter("pw"));
 		user.setFaculty(request.getParameter("fac"));
 		user.setProgram(request.getParameter("program"));
-		user.setYearOfStudy(Integer.parseInt(request.getParameter("year")));
+		try {
+			user.setYearOfStudy(Integer.parseInt(request.getParameter("year")));
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+		}
 		user.setDateCreated(date);
 
 		// add user to the database
