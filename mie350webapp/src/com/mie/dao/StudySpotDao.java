@@ -147,7 +147,7 @@ public class StudySpotDao {
 		StudySpot studyspot = new StudySpot();
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Study_Spots_DB where LlocationID=?");
+					.prepareStatement("select * from Study_Spots_DB where locationID=?");
 			preparedStatement.setInt(1, locationID);
 			ResultSet rs = preparedStatement.executeQuery();
 
