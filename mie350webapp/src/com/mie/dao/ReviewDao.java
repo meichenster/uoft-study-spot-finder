@@ -18,6 +18,8 @@ public class ReviewDao {
 	 */
 
 	private static Connection connection;
+	static Connection currentCon = DbUtil.getConnection();
+	static ResultSet rs = null;
 
 	public ReviewDao() {
 		/**
@@ -115,28 +117,69 @@ public class ReviewDao {
 
 		return Reviews;
 	}
-	public ArrayList<Review> getReviews() {
+	// public static Review getReviews(Review review, int rows) {
+	// 	ArrayList<Review> locations = new ArrayList<Review>();
+	// 	try {
+	// 		String searchQuery ="SELECT * from Reviews_DB WHERE Review ID ='"
+	// 		+ rows + "'";
+	// 		Statement stmt = null;
+	// 		currentCon = DbUtil.getConnection();
+	// 		stmt = currentCon.createStatement();
+	// 		rs = stmt.executeQuery(searchQuery);
+	// 		while(rs.next()){
+	// 		//	Review review = new Review();
+	// 			review.setReviewID(rs.getInt("Review ID"));
+	// 			review.setLocationID(rs.getInt("Location ID"));
+	// 			review.setUsername(rs.getString("Username"));
+	// 			review.setLocation(rs.getString("Location"));
+	// 			review.setRating(rs.getDouble("Rating"));
+	// 			// review.setRecommended(rs.getBoolean("Recommend?"));
+	// 			locations.add(review);
+	// 		}
+	// 		// System.out.print(locations);
+	// 	} catch (SQLException e) {
+	// 		e.printStackTrace();
+	// 	}
+	// 	return review;
+	// }
+	public static ArrayList <Review> getReviews(Review review) {
 		ArrayList<Review> locations = new ArrayList<Review>();
 		try {
-			Statement statement = connection.createStatement();
-			ResultSet rs = statement.executeQuery("SELECT * from Reviews_DB"); 
+			String searchQuery ="SELECT * from Reviews_DB";
+			Statement stmt = null;
+			currentCon = DbUtil.getConnection();
+			stmt = currentCon.createStatement();
+			rs = stmt.executeQuery(searchQuery);
 			while(rs.next()){
-				Review review = new Review();
+			//	Review review = new Review();
 				review.setReviewID(rs.getInt("Review ID"));
 				review.setLocationID(rs.getInt("Location ID"));
 				review.setUsername(rs.getString("Username"));
 				review.setLocation(rs.getString("Location"));
-				review.setRating(rs.getDouble("Rating (out of 5)"));
-				review.setRecommended(rs.getBoolean("Recommend? (Yes/No)"));
+				review.setRating(rs.getDouble("Rating"));
+				// review.setRecommended(rs.getBoolean("Recommend?"));
 				locations.add(review);
 			}
-			System.out.print(locations);
+			// System.out.print(locations);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return locations;
 	}
-
+	// public static int getRows() {
+	// 	int rows = 0;
+	// 	try {
+	// 		String searchQuery ="SELECT COUNT * from Reviews_DB";
+	// 		Statement stmt = null;
+	// 		currentCon = DbUtil.getConnection();
+	// 		stmt = currentCon.createStatement();
+	// 		rs = stmt.executeQuery(searchQuery);
+	// 		rows =  ((Number) rs.getObject(1)).intValue();
+	// 	} catch (SQLException e) {
+	// 		e.printStackTrace();
+	// 	}
+	// 	return rows;
+	//}
 	public static Review setReview(Review review) {
 		int reviewid = review.getReviewID();
 		try {

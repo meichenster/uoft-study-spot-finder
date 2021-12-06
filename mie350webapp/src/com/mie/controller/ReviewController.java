@@ -39,7 +39,8 @@ public class ReviewController extends HttpServlet {
 		/**
 		 * This class allows users to add reviews. Then the user is redirected to the updated reviews page.
 		 */
-		// String forward = "";
+		 String forward = "";
+		 
 		// String action = request.getParameter("action");
 		// if (action.equalsIgnoreCase("getreviews")) {
 		// 	forward = REVIEWS;
