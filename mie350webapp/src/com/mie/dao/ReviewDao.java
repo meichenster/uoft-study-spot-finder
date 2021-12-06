@@ -142,8 +142,8 @@ public class ReviewDao {
 	// 	}
 	// 	return review;
 	// }
-	public static ArrayList <Review> getReviews(Review review) {
-		ArrayList<Review> locations = new ArrayList<Review>();
+	public static List <Review> getReviews(Review review) {
+		List<Review> locations = new ArrayList<Review>();
 		try {
 			String searchQuery ="SELECT * from Reviews_DB";
 			Statement stmt = null;
