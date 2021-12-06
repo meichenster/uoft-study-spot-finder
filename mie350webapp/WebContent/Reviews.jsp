@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR" import = "java.util.ArrayList, com.mie.dao.*, com.mie.model.*"%>
+	pageEncoding="EUC-KR" import = "java.util.ArrayList, java.util.List, com.mie.dao.*, com.mie.model.*"%>
 <!DOCTYPE html>
 <html lang="en">
 	<%@ include file="head.jsp"%> 
@@ -8,9 +8,9 @@
   	<%
 		Review reviews = new Review();
     ReviewDao dao = new ReviewDao();
-    ArrayList <Review> listofall = new ArrayList <Review>();
+    List <Review> listofall = new ArrayList <Review>();
     listofall = dao.getReviews(reviews);
-    System.out.print(listofall.get(0).getLocation());
+    System.out.print(listofall.get(1).getLocation());
 	%>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
