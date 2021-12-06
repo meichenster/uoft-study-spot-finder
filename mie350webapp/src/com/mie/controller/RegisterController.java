@@ -42,6 +42,7 @@ public class RegisterController extends HttpServlet {
 			/**
 			 * Try to see if the member can log in.
 			 */
+			
 			user = UserDao.login(user);
 			user = UserDao.setUser(user);
 			/**

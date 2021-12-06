@@ -64,16 +64,11 @@ public class UserDao {
 			 */
 			else if (more) {
 				user.setValid(true);
-				String faculty = rs.getString("Faculty");
-				String program = rs.getString("Program");
-				int yearOfStudy = rs.getInt("Year of study");
-				Date dateCreated = rs.getDate("Date created (account)");
-
-				user.setFaculty(faculty);
-				user.setProgram(program);
-				user.setYearOfStudy(yearOfStudy);
-				user.setDateCreated(dateCreated);
-				user.setValid(true);
+				user.setUsername(rs.getString("username"));
+				user.setFaculty(rs.getString("faculty"));
+				user.setProgram(rs.getString("program"));
+				user.setYearOfStudy(rs.getInt("year_of_study"));
+				user.setDateCreated(rs.getDate("account_creation_date"));
 			}
 		}
 
@@ -115,6 +110,9 @@ public class UserDao {
 	 * This method adds a new user to the database
 	 */
 	public static void addUser(User user) {
+		Statement stmt = null;
+		String username = user.getUsername();
+		String password = user.getPassword();
 		try {
 			PreparedStatement preparedStatement = currentCon
 					.prepareStatement("insert into User_Account_Login_DB(username, password) values (?, ?)");
@@ -129,7 +127,7 @@ public class UserDao {
 		}
 		try {
 			PreparedStatement preparedStatement = currentCon
-					.prepareStatement("insert into User_Information_DB(username, faculty, program, year_of_study, date_created(account) values (?,?,?,?,?");
+					.prepareStatement("insert into User_Information_DB(username, faculty, program, year_of_study, account_creation_date values (?,?,?,?,?");
 			
 			preparedStatement.setString(1, user.getUsername());
 			preparedStatement.setString(2, user.getFaculty());

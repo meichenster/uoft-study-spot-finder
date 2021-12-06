@@ -21,7 +21,7 @@ public class UserDao {
 	 * This class handles the User objects and the login component of the web
 	 * app.
 	 */
-	static Connection currentCon = null;
+	static Connection currentCon = DbUtil.getConnection();
 	static ResultSet rs = null;
 	
 	public static User login(User user) {
@@ -64,16 +64,11 @@ public class UserDao {
 			 */
 			else if (more) {
 				user.setValid(true);
-				String faculty = rs.getString("Faculty");
-				String program = rs.getString("Program");
-				int yearOfStudy = rs.getInt("Year of study");
-				Date dateCreated = rs.getDate("Date created (account)");
-
-				user.setFaculty(faculty);
-				user.setProgram(program);
-				user.setYearOfStudy(yearOfStudy);
-				user.setDateCreated(dateCreated);
-				user.setValid(true);
+				user.setUsername(rs.getString("username"));
+				user.setFaculty(rs.getString("faculty"));
+				user.setProgram(rs.getString("program"));
+				user.setYearOfStudy(rs.getInt("year_of_study"));
+				user.setDateCreated(rs.getDate("account_creation_date"));
 			}
 		}
 
@@ -116,9 +111,11 @@ public class UserDao {
 	 */
 	public static void addUser(User user) {
 		try {
+			String username = user.getUsername();
+			String password = user.getPassword();
+			System.out.print(password);
 			PreparedStatement preparedStatement = currentCon
-					.prepareStatement("insert into User_Account_Login_DB(username, password) values (?, ?)");
-			
+					.prepareStatement("insert into User_Account_Login_DB(username,password) values (?, ?)");
 					// Parameters start with 1
 			preparedStatement.setString(1, user.getUsername());
 			preparedStatement.setString(2, user.getPassword());
@@ -129,8 +126,7 @@ public class UserDao {
 		}
 		try {
 			PreparedStatement preparedStatement = currentCon
-					.prepareStatement("insert into User_Information_DB(username, faculty, program, year_of_study, date_created(account) values (?,?,?,?,?");
-			
+					.prepareStatement("insert into User_Information_DB(username, faculty, program, year_of_study, account_creation_date values (?,?,?,?,?");
 			preparedStatement.setString(1, user.getUsername());
 			preparedStatement.setString(2, user.getFaculty());
 			preparedStatement.setString(3, user.getProgram());
