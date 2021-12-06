@@ -111,9 +111,6 @@ public class UserDao {
 	 */
 	public static void addUser(User user) {
 		try {
-			String username = user.getUsername();
-			String password = user.getPassword();
-			System.out.print(password);
 			PreparedStatement preparedStatement = currentCon
 					.prepareStatement("insert into User_Account_Login_DB(username,password) values (?, ?)");
 					// Parameters start with 1
@@ -126,7 +123,7 @@ public class UserDao {
 		}
 		try {
 			PreparedStatement preparedStatement = currentCon
-					.prepareStatement("insert into User_Information_DB(username, faculty, program, year_of_study, account_creation_date values (?,?,?,?,?");
+					.prepareStatement("insert into User_Information_DB(username,faculty,program,year_of_study,account_creation_date) values (?,?,?,?,?)");
 			preparedStatement.setString(1, user.getUsername());
 			preparedStatement.setString(2, user.getFaculty());
 			preparedStatement.setString(3, user.getProgram());
