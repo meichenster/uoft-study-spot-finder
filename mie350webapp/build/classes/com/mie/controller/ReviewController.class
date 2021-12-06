@@ -21,7 +21,7 @@ public class ReviewController extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static String REVIEWS = "/mie350webapp/WebContent/Reviews.jsp";
+	private static String REVIEWS = "/reviews.jsp";
 
 	private ReviewDao dao;
 
@@ -39,16 +39,16 @@ public class ReviewController extends HttpServlet {
 		/**
 		 * This class allows users to add reviews. Then the user is redirected to the updated reviews page.
 		 */
-		// String forward = "";
-		// String action = request.getParameter("action");
-		// if (action.equalsIgnoreCase("getreviews")) {
-		// 	forward = REVIEWS;
-		// 	request.setAttribute("students", dao.getReviews());
-		// } else if (action.equalsIgnoreCase("add")) {
-		// 	forward = REVIEWS;
-		// } else {
-		// 	forward = REVIEWS;
-		// }
+		String forward = "";
+		String action = request.getParameter("action");
+		if (action.equalsIgnoreCase("getreviews")) {
+			forward = REVIEWS;
+			request.setAttribute("students", dao.getReviews());
+		} else if (action.equalsIgnoreCase("add")) {
+			forward = REVIEWS;
+		} else {
+			forward = REVIEWS;
+		}
 
 		RequestDispatcher view = request.getRequestDispatcher(forward);
 		view.forward(request, response);

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<%@ include file="head.jsp"%> 
+  <script src="assets/js/buttontoggle.js"></script>
 
 <body>
 
@@ -36,20 +37,24 @@
 
         <div class="section-title">
           <h2>Reviews</h2>
-          <p>Read and write reviews about study spots on campu</p>
+          <p>Read and write reviews about study spots on campus</p><br>
+          <div class="text-center"><button class = "button" onclick="buttontoggle()">Write a Review</button>
+            <div id = "registerstuff">
+              <p>hi</p>
+            </div>
+          </div>
         </div>
-        <div class="text-center"><button class = "button" asction = "ReviewController">Write a Review</button>
-        </div>
+
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-             <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Study Spot A <i class="bx bx-chevron-up icon-show"></i><i class="bx bx-chevron-down icon-close"></i></a>
-              <div id="faq-list-1" class="collapse close" data-bs-parent=".faq-list">
-                <p>
-                  Info on study spot A
-                </p>
-              </div>
-            </li>
+              <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-2">Study Spot B <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+               <div id="faq-list-2" class="collapse show" data-bs-parent=".faq-list">
+                 <p>
+                   Info on study spot A
+                 </p>
+               </div>
+             </li>
 
           </ul>
         </div>

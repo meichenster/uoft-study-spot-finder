@@ -17,7 +17,7 @@ public class ReviewDao {
 	 * (add/update/delete/get).
 	 */
 
-	private Connection connection;
+	private static Connection connection;
 
 	public ReviewDao() {
 		/**
@@ -115,7 +115,49 @@ public class ReviewDao {
 
 		return Reviews;
 	}
+	public ArrayList<Review> getReviews() {
+		ArrayList<Review> locations = new ArrayList<Review>();
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * from Reviews_DB"); 
+			while(rs.next()){
+				Review review = new Review();
+				review.setReviewID(rs.getInt("Review ID"));
+				review.setLocationID(rs.getInt("Location ID"));
+				review.setUsername(rs.getString("Username"));
+				review.setLocation(rs.getString("Location"));
+				review.setRating(rs.getDouble("Rating (out of 5)"));
+				review.setRecommended(rs.getBoolean("Recommend? (Yes/No)"));
+				locations.add(review);
+			}
+			System.out.print(locations);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return locations;
+	}
 
+	public static Review setReview(Review review) {
+		int reviewid = review.getReviewID();
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * from from Reviews_DB WHERE Review ID= '"
+			+ reviewid + "'");
+			while (rs.next()) {
+				review.setReviewID(rs.getInt("Review ID"));
+				review.setLocationID(rs.getInt("Location ID"));
+				review.setUsername(rs.getString("Username"));
+				review.setLocation(rs.getString("Location"));
+				review.setRating(rs.getDouble("Rating (out of 5)"));
+				review.setRecommended(rs.getBoolean("Recommend? (Yes/No)"));
+				review.setReview(rs.getString("Review"));
+				//Reviews.add(review);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return review;
+	}
 	public Review getReviewById(int reviewID) {
 		/**
 		 * This method retrieves a StudySpot by their reviewID number.

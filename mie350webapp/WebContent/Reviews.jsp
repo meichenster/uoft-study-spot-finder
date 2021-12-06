@@ -36,19 +36,20 @@
 
         <div class="section-title">
           <h2>Reviews</h2>
-          <p>Here is some text</p>
+          <p>Read and write reviews about study spots on campus</p><br>
+          <div class="text-center"><a href = "login.jsp"></href><button class = "button">Write a Review</button></a></div>
         </div>
 
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-             <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Study Spot A <i class="bx bx-chevron-up icon-show"></i><i class="bx bx-chevron-down icon-close"></i></a>
-              <div id="faq-list-1" class="collapse close" data-bs-parent=".faq-list">
-                <p>
-                  Info on study spot A
-                </p>
-              </div>
-            </li>
+              <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Study Spot A <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+               <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                 <p>
+                   Info on study spot A
+                 </p>
+               </div>
+             </li>
 
           </ul>
         </div>
