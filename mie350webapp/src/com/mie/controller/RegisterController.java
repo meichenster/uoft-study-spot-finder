@@ -11,6 +11,7 @@ import java.util.*;
 
 import com.mie.model.*;
 import com.mie.dao.*;
+import com.mie.model.User;
 
 /**
  * Servlet implementation for RegisterController.
