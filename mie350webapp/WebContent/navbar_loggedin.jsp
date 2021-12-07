@@ -7,6 +7,7 @@
 				<ul>
 				  <li><a href="searchspotloggedin.jsp">Find a Study Spot</a></li>
 				  <li><a href="reviewsloggedin.jsp">Study Spot Reviews</a></li>
+				  <li><a href="reviewsloggedin.jsp">My Saved Spots</a></li>
 				</ul>
 			  </li>
 			  <li><a class="nav-link scrollto" href="contactloggedin.jsp">Contact Us</a></li>

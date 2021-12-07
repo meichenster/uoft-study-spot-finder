@@ -41,6 +41,7 @@ body.my-login-page {
 
 .my-login-page .form-control {
 	border-width: 2.3px;
+	max-width: 50%;
 }
 
 .my-login-page .form-group label {
