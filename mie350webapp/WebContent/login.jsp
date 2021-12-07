@@ -9,7 +9,8 @@
       <h1 class="logo"><a href="index.jsp">StudySpotter</a></h1>	
 	  <%@ include file="navbar.jsp"%>
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 	<!-- ======= Header 2 ======= -->
     <section class="breadcrumbs">
 		<div class="container">
@@ -21,16 +22,14 @@
 			</ol>
 		  </div>
 		</div>
-	  </section><!-- End Header 2 -->
+	  </section>
+	  <!--End Header 2 -->
 
 <body class="my-login-page">
 	<section class="h-100">
 		<div class="container h-100">
-			<div class="row justify-content-md-center h-100">
-				<div class="card-wrapper">
-					<!-- <div class="text-center">
-						<img class = "animated-gif" src="assets/img/logo.gif" alt="logo">
-					</div> -->
+			<div class="row justify-content-md-center h-100" >
+				<div class="card-wrapper" >
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Log in</h4>

@@ -72,5 +72,17 @@
       
       <!-- Template Main JS File -->
       <script src="assets/js/main.js"></script>
-      
+
+      <!-- Login Page Credits -->
+      <meta name="author" content="Kodinger">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="css/my-login.css">
+          
+  <!-- =======================================================
+  * Template Name: Techie - v4.7.0
+  * Template URL: https://bootstrapmade.com/techie-free-skin-bootstrap-3/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
       </head>
