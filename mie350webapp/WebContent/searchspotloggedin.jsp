@@ -92,7 +92,7 @@
 								<div class="form-group">
                 <p><b>Please select your Username</b></p>
                 <form action = "SavedSpotsController">
-                    <select class="form-control" name = "un" onchange="this.form.submit()">
+                    <select class="form-control" name = "un">
                       <option disabled selected value> </option> 
                     <c:forEach items="${listofnames}" var="User"> 
                       <option value="${User.username}">${User.username}</option>
@@ -137,7 +137,7 @@
                     <option value="Innis College Library">Innis College Library</option>
                     <option value="Law Library (Bora Laskin)">Law Library (Bora Laskin)</option>
                     <option value="New College Library (Ivey)">New College Library (Ivey)</option>
-                    <option value="St. Michael’s College - John M. Kelly Library">St. Michael’s College - John M. Kelly Library</option>
+                    <option value="St. Michael’s College - John M. Kelly Library">St. Michael's College - John M. Kelly Library</option>
                     <option value="Trinity College Library (John W Graham Library)">Trinity College Library (John W Graham Library)</option>
                     <option value="Earth Sciences Library (Noranda)">Earth Sciences Library (Noranda)</option>
 									  </select>
