@@ -9,9 +9,11 @@
 # General
 --------------------------------------------------------------*/
 #element1 {display:inline-block;margin-right:10px;} 
-#element2 {display:inline-block; width:150px;} 
-#element3 {display:inline-block;margin-right:10px;} 
-#element4 {display:inline-block; width:150px;} 
+
+img.animated-gif{
+  width: 30%;
+  height: auto;
+} 
 .hidden {
   display:none;
 }

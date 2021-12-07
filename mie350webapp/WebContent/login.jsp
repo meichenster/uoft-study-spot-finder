@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<%@ include file="head.jsp"%> 
-	<body>
 <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
@@ -23,18 +22,21 @@
 		  </div>
 		</div>
 	  </section><!-- End Header 2 -->
-<section class="contact section-bg">
+
 <body class="my-login-page">
 	<section class="h-100">
-		<div class="container">
-			<div class="row">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
 				<div class="card-wrapper">
+					<!-- <div class="text-center">
+						<img class = "animated-gif" src="assets/img/logo.gif" alt="logo">
+					</div> -->
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Log in</h4>
 							<form action = "LoginController" class="my-login-validation" novalidate="">
 								<div class="form-group">
-									<label for="username">Username&nbsp;</label>
+									<label for="username">Username</label>
 									<input id="username" type="text" class="form-control" name="un" value="" required autofocus>
 									<div class="invalid-feedback">
 										Username is invalid
@@ -42,8 +44,7 @@
 								</div>
 
 								<div class="form-group">
-									<label for="password">Password
-									</label>
+									<label for="password">Password</label>
 									<input id="password" type="password" class="form-control" name="pw" required data-eye>
 								    <div class="invalid-feedback">
 								    	Password is required
@@ -62,6 +63,7 @@
 										Login
 									</button>
 								</div>
+
 								<div class="mt-4 text-center">
 									Don't have an account? <a href="register.jsp">Create One</a>
 								</div>
@@ -81,6 +83,5 @@
 		<!-- ======= Footer ======= -->
 		<%@ include file="footer.jsp"%> 
 		<!-- End Footer -->
-		</body>
 </body>
 </html>
