@@ -123,7 +123,7 @@ public class UserDao {
 		}
 		try {
 			PreparedStatement preparedStatement = currentCon
-					.prepareStatement("insert into User_Information_DB(username,faculty,program,year_of_study,account_creation_date) values (?,?,?,?,?)");
+					.prepareStatement("insert into User_Information_DB(username,faculty,program,yearStudy,accountDateCreated) values (?,?,?,?,?)");
 			preparedStatement.setString(1, user.getUsername());
 			preparedStatement.setString(2, user.getFaculty());
 			preparedStatement.setString(3, user.getProgram());

@@ -12,7 +12,7 @@ public class Review {
    
     private String location;
     private double rating;
-    private boolean isRecommended;
+    private boolean recommended;
     private String review;
 
     public int getReviewID() {
@@ -55,12 +55,12 @@ public class Review {
         this.rating = rating;
     }
 
-    public boolean isRecommended() {
-        return isRecommended;
+    public boolean getRecommended() {
+        return recommended;
     }
 
-    public void setRecommended(boolean isRecommended) {
-        this.isRecommended = isRecommended;
+    public void setRecommended(boolean recommended) {
+        this.recommended = recommended;
     }
 
     public String getReview() {
@@ -74,7 +74,7 @@ public class Review {
 
     @Override
     public String toString() {
-        return "Review [isRecommended=" + isRecommended + ", location=" + location + ", locationID=" + locationID
+        return "Review [isRecommended=" + recommended + ", location=" + location + ", locationID=" + locationID
                 + ", rating=" + rating + ", review=" + review + ", reviewID=" + reviewID + ", username=" + username
                 + "]";
     }

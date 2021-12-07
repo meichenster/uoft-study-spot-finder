@@ -53,10 +53,12 @@
               <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1"><c:out value = "${Review.location}"/><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                 <p>
-                  Location ID: <c:out value = "${Review.locationID}"/><br>
-                  Rating: <c:out value = "${Review.rating}"/><br>
-                  Review ID: <c:out value = "${Review.reviewID}"/><br>
-                  Username: <c:out value = "${Review.username}"/><br>
+                  <b>Review</b> <c:out value = "${Review.reviewID}"/> <b>:</b><br>
+                  <b>Reviewed by:</b> <c:out value = "${Review.username}"/><br>
+                  <b>Location ID:</b> <c:out value = "${Review.locationID}"/><br>
+                  <b>Rating:</b> <c:out value = "${Review.rating}"/><br>
+                  <b>Recommend?:</b> <c:out value = "${Review.recommended}"/><br>
+                  <b>Review:</b> <c:out value = "${Review.review}"/><br>
                  </p>
                </div>
              </li>

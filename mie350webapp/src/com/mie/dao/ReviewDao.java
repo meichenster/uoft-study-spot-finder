@@ -34,7 +34,7 @@ public class ReviewDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into Reviews_DB(Review_ID, Location_ID, Username, Location, Rating_(out of 5), Recommend?_(Yes/No), Review) values (?, ?, ?, ?, ?, ?, ?)");
+					.prepareStatement("insert into Reviews_DB(reviewID, locationID, username, location, rating, recommend, review) values (?, ?, ?, ?, ?, ?, ?)");
 			
 					// Parameters start with 1
 			preparedStatement.setInt(1, review.getReviewID());
@@ -42,7 +42,7 @@ public class ReviewDao {
 			preparedStatement.setString(3, review.getUsername());
 			preparedStatement.setString(4, review.getLocation());
 			preparedStatement.setDouble(5, review.getRating());
-			preparedStatement.setBoolean(6, review.isRecommended());
+			preparedStatement.setBoolean(6, review.getRecommended());
 			preparedStatement.setString(7, review.getLocation());
 			preparedStatement.executeUpdate();
 
@@ -57,7 +57,7 @@ public class ReviewDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("delete from Study_Spots_DB where Review_ID=?");
+					.prepareStatement("delete from Study_Spots_DB where reviewID=?");
 			// Parameters start with 1
 			preparedStatement.setInt(1, reviewID);
 			preparedStatement.executeUpdate();
@@ -73,15 +73,15 @@ public class ReviewDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("update Reviews_DB set Review_ID=?, Location_ID=?, Username=?, Location=?, Rating_(out of 5)=?, Recommend?_(Yes/No)=?, Review=?" 
-					+ " where Review_ID=?");
+					.prepareStatement("update Reviews_DB set reviewID=?, locationID=?, username=?, location=?, rating=?, recommend=?, review=?" 
+					+ " where reviewID=?");
 			// Parameters start with 1
 			preparedStatement.setInt(1, review.getReviewID());
 			preparedStatement.setInt(2, review.getLocationID());
 			preparedStatement.setString(3, review.getUsername());
 			preparedStatement.setString(4, review.getLocation());
 			preparedStatement.setDouble(5, review.getRating());
-			preparedStatement.setBoolean(6, review.isRecommended());
+			preparedStatement.setBoolean(6, review.getRecommended());
 			preparedStatement.setString(7, review.getReview());
 			preparedStatement.executeUpdate();
 
@@ -90,25 +90,25 @@ public class ReviewDao {
 		}
 	}
 
-	public List<Review> getAllReviews() {
+	public ArrayList<Review> getAllReviews() {
 		/**
 		 * This method returns the list of all reviews in the form of a List
 		 * object.
 		 */
-		List<Review> Reviews = new ArrayList<Review>();
+		ArrayList<Review> Reviews = new ArrayList<Review>();
 		try {
 			Statement statement = connection.createStatement();
 			// System.out.println("getting Reviews from table");
 			ResultSet rs = statement.executeQuery("select * from Reviews_DB");
 			while (rs.next()) {
 				Review review = new Review();
-				review.setReviewID(rs.getInt("Review ID"));
-				review.setLocationID(rs.getInt("Location ID"));
-				review.setUsername(rs.getString("Username"));
-				review.setLocation(rs.getString("Location"));
-				review.setRating(rs.getDouble("Rating (out of 5)"));
-				review.setRecommended(rs.getBoolean("Recommend? (Yes/No)"));
-				review.setReview(rs.getString("Review"));
+				review.setReviewID(rs.getInt("reviewID"));
+				review.setLocationID(rs.getInt("locationID"));
+				review.setUsername(rs.getString("username"));
+				review.setLocation(rs.getString("location"));
+				review.setRating(rs.getDouble("rating"));
+				review.setRecommended(rs.getBoolean("recommended"));
+				review.setReview(rs.getString("review"));
 				Reviews.add(review);
 			}
 		} catch (SQLException e) {
@@ -152,12 +152,13 @@ public class ReviewDao {
 			rs = stmt.executeQuery(searchQuery);
 			while(rs.next()){
 				Review reviews = new Review();
-				reviews.setReviewID(rs.getInt("Review ID"));
-				reviews.setLocationID(rs.getInt("Location ID"));
-				reviews.setUsername(rs.getString("Username"));
-				reviews.setLocation(rs.getString("Location"));
-				reviews.setRating(rs.getDouble("Rating"));
-				// review.setRecommended(rs.getBoolean("Recommend?"));
+				reviews.setReviewID(rs.getInt("reviewID"));
+				reviews.setLocationID(rs.getInt("locationID"));
+				reviews.setUsername(rs.getString("username"));
+				reviews.setLocation(rs.getString("location"));
+				reviews.setRating(rs.getDouble("rating"));
+				review.setRecommended(rs.getBoolean("recommended"));
+				reviews.setReview(rs.getString("review"));
 				locations.add(reviews);
 			}
 			// System.out.print(locations);
@@ -184,16 +185,16 @@ public class ReviewDao {
 		int reviewid = review.getReviewID();
 		try {
 			Statement statement = connection.createStatement();
-			ResultSet rs = statement.executeQuery("SELECT * from from Reviews_DB WHERE Review ID= '"
+			ResultSet rs = statement.executeQuery("SELECT * from from Reviews_DB WHERE reviewID= '"
 			+ reviewid + "'");
 			while (rs.next()) {
-				review.setReviewID(rs.getInt("Review ID"));
-				review.setLocationID(rs.getInt("Location ID"));
-				review.setUsername(rs.getString("Username"));
-				review.setLocation(rs.getString("Location"));
-				review.setRating(rs.getDouble("Rating (out of 5)"));
-				review.setRecommended(rs.getBoolean("Recommend? (Yes/No)"));
-				review.setReview(rs.getString("Review"));
+				review.setReviewID(rs.getInt("reviewID"));
+				review.setLocationID(rs.getInt("locationID"));
+				review.setUsername(rs.getString("username"));
+				review.setLocation(rs.getString("location"));
+				review.setRating(rs.getDouble("rating"));
+				review.setRecommended(rs.getBoolean("recommended"));
+				review.setReview(rs.getString("review"));
 				//Reviews.add(review);
 			}
 		} catch (SQLException e) {
@@ -211,23 +212,22 @@ public class ReviewDao {
 		Review review = new Review();
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Study_Spots_DB where Review_ID=?");
+					.prepareStatement("select * from Study_Spots_DB where reviewID=?");
 			preparedStatement.setInt(1, reviewID);
 			ResultSet rs = preparedStatement.executeQuery();
 
 			if (rs.next()) {;
-				review.setReviewID(rs.getInt("Review ID"));
-				review.setLocationID(rs.getInt("Location ID"));
-				review.setUsername(rs.getString("Username"));
-				review.setLocation(rs.getString("Location"));
-				review.setRating(rs.getDouble("Rating (out of 5)"));
-				review.setRecommended(rs.getBoolean("Recommend? (Yes/No)"));
-				review.setReview(rs.getString("Review"));
+				review.setReviewID(rs.getInt("reviewID"));
+				review.setLocationID(rs.getInt("locationID"));
+				review.setUsername(rs.getString("username"));
+				review.setLocation(rs.getString("location"));
+				review.setRating(rs.getDouble("rating"));
+				review.setRecommended(rs.getBoolean("recommended"));
+				review.setReview(rs.getString("review"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 		return review;
 	}
 }

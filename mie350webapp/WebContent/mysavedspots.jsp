@@ -30,7 +30,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <ol>
             <li><a href="indexloggedin.jsp">Home</a></li>
-            <li>Study Spot Reviews</li>
+            <li>My Saved Spots</li>
           </ol>
         </div>
 
@@ -38,15 +38,13 @@
     </section><!-- End Header 2 -->
 
 
-  <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq">
+  <!-- ======= Saved Spots Section ======= -->
+    <section id="savedspots" class="contact">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Reviews</h2>
-          <p>Read and write reviews about study spots on campus</p><br>
-          <div class="text-center"><button class = "button" onclick="javascript:toggleDiv('registerstuff');">Write a Review</button>
-            <br><br>
+          <h2>My Saved Spots</h2>
+          <p>View your saved spots</p><br>
             <div id = "registerstuff" class = "hidden">
           </div>
         </div>
