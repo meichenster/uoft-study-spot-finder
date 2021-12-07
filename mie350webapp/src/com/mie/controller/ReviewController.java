@@ -7,9 +7,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.mie.dao.ReviewDao;
 import com.mie.model.Review;
+import com.mie.model.*;
+import com.mie.dao.*;
 
 public class ReviewController extends HttpServlet {
 	/**
@@ -20,8 +23,6 @@ public class ReviewController extends HttpServlet {
 	 * LIST_REVIEW_PUBLIC leads to the public listing of reviews.
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private static String REVIEWS = "/mie350webapp/WebContent/Reviews.jsp";
 
 	private ReviewDao dao;
 
@@ -39,7 +40,34 @@ public class ReviewController extends HttpServlet {
 		/**
 		 * This class allows users to add reviews. Then the user is redirected to the updated reviews page.
 		 */
-		 String forward = "";
+		
+		/**
+		 * This method retrieves all of the information entered in the form on
+		 * the reviews.jsp page.
+		 */
+		// User user = new User();
+		// HttpSession session = request.getSession(true);
+		// session.getAttribute(user.getUsername());
+		Review reviews = new Review();
+		reviews.setReviewID(Integer.parseInt(request.getParameter("reviewID")));
+		reviews.setLocationID(Integer.parseInt(request.getParameter("locationID")));
+		reviews.setUsername(request.getParameter("username"));
+		reviews.setLocation(request.getParameter("location"));
+		reviews.setRating(Double.parseDouble(request.getParameter("rating")));
+		reviews.setRecommend(Boolean.parseBoolean(request.getParameter("recommend")));
+		reviews.setReview(request.getParameter("review"));
+
+		dao.addReview(reviews);
+
+		/**
+		 * Once the review is added, the page will redirect to
+		 * the reviews page.
+		 */
+
+		// RequestDispatcher view = request
+		// 		.getRequestDispatcher(REVIEWS);
+		// request.setAttribute("reviews", dao.getAllReviews());
+		// view.forward(request, response);
 		 
 		// String action = request.getParameter("action");
 		// if (action.equalsIgnoreCase("getreviews")) {
@@ -51,35 +79,39 @@ public class ReviewController extends HttpServlet {
 		// 	forward = REVIEWS;
 		// }
 
-		RequestDispatcher view = request.getRequestDispatcher(forward);
-		view.forward(request, response);
+		response.sendRedirect("reviewsloggedin.jsp");
+
+		// RequestDispatcher view = request.getRequestDispatcher(forward);
+		// view.forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	// protected void doPost(HttpServletRequest request,
+	// 		HttpServletResponse response) throws ServletException, IOException {
 
-		/**
-		 * This method retrieves all of the information entered in the form on
-		 * the reviews.jsp page.
-		 */
-		Review review = new Review();
-		review.setReviewID(Integer.parseInt(request.getParameter("reviewID")));
-		review.setLocationID(Integer.parseInt(request.getParameter("locationID")));
-		review.setUsername(request.getParameter("username"));
-		review.setLocation(request.getParameter("location"));
-		review.setRating(Double.parseDouble(request.getParameter("rating")));
-		review.setRecommended(Boolean.parseBoolean(request.getParameter("recommend")));
-		review.setReview(request.getParameter("review"));
+	// 	/**
+	// 	 * This method retrieves all of the information entered in the form on
+	// 	 * the reviews.jsp page.
+	// 	 */
+	// 	Review reviews = new Review();
+	// 	reviews.setReviewID(Integer.parseInt(request.getParameter("reviewID")));
+	// 	reviews.setLocationID(Integer.parseInt(request.getParameter("locationID")));
+	// 	reviews.setUsername(request.getParameter("username"));
+	// 	reviews.setLocation(request.getParameter("location"));
+	// 	reviews.setRating(Double.parseDouble(request.getParameter("rating")));
+	// 	reviews.setRecommend(Boolean.parseBoolean(request.getParameter("recommend")));
+	// 	reviews.setReview(request.getParameter("review"));
 
-		dao.addReview(review);
+	// 	dao.addReview(reviews);
 
-		/**
-		 * Once the review is added, the page will redirect to
-		 * the reviews page.
-		 */
-		RequestDispatcher view = request
-				.getRequestDispatcher(REVIEWS);
-		request.setAttribute("reviews", dao.getAllReviews());
-		view.forward(request, response);
-	}
+	// 	/**
+	// 	 * Once the review is added, the page will redirect to
+	// 	 * the reviews page.
+	// 	 */
+	// 	response.sendRedirect("reviewsloggedin.jsp");
+
+	// 	// RequestDispatcher view = request
+	// 	// 		.getRequestDispatcher(REVIEWS);
+	// 	// request.setAttribute("reviews", dao.getAllReviews());
+	// 	// view.forward(request, response);
+	// }
 }

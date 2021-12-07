@@ -57,7 +57,7 @@
                   <b>Reviewed by:</b> <c:out value = "${Review.username}"/><br>
                   <b>Location ID:</b> <c:out value = "${Review.locationID}"/><br>
                   <b>Rating:</b> <c:out value = "${Review.rating}"/><br>
-                  <b>Recommend?:</b> <c:out value = "${Review.recommended}"/><br>
+                  <b>Recommend?:</b> <c:out value = "${Review.recommend}"/><br>
                   <b>Review:</b> <c:out value = "${Review.review}"/><br>
                  </p>
                </div>

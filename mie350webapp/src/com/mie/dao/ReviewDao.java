@@ -32,9 +32,11 @@ public class ReviewDao {
 		/**
 		 * This method adds a new StudySpot to the database.
 		 */
+		System.out.println("HELLo!!!");
 		try {
 			PreparedStatement preparedStatement = connection
 					.prepareStatement("insert into Reviews_DB(reviewID, locationID, username, location, rating, recommend, review) values (?, ?, ?, ?, ?, ?, ?)");
+			
 			
 					// Parameters start with 1
 			preparedStatement.setInt(1, review.getReviewID());
@@ -42,7 +44,7 @@ public class ReviewDao {
 			preparedStatement.setString(3, review.getUsername());
 			preparedStatement.setString(4, review.getLocation());
 			preparedStatement.setDouble(5, review.getRating());
-			preparedStatement.setBoolean(6, review.getRecommended());
+			preparedStatement.setBoolean(6, review.getRecommend());
 			preparedStatement.setString(7, review.getLocation());
 			preparedStatement.executeUpdate();
 
@@ -81,7 +83,7 @@ public class ReviewDao {
 			preparedStatement.setString(3, review.getUsername());
 			preparedStatement.setString(4, review.getLocation());
 			preparedStatement.setDouble(5, review.getRating());
-			preparedStatement.setBoolean(6, review.getRecommended());
+			preparedStatement.setBoolean(6, review.getRecommend());
 			preparedStatement.setString(7, review.getReview());
 			preparedStatement.executeUpdate();
 
@@ -107,7 +109,7 @@ public class ReviewDao {
 				review.setUsername(rs.getString("username"));
 				review.setLocation(rs.getString("location"));
 				review.setRating(rs.getDouble("rating"));
-				review.setRecommended(rs.getBoolean("recommended"));
+				review.setRecommend(rs.getBoolean("recommend"));
 				review.setReview(rs.getString("review"));
 				Reviews.add(review);
 			}
@@ -157,7 +159,7 @@ public class ReviewDao {
 				reviews.setUsername(rs.getString("username"));
 				reviews.setLocation(rs.getString("location"));
 				reviews.setRating(rs.getDouble("rating"));
-				review.setRecommended(rs.getBoolean("recommended"));
+				review.setRecommend(rs.getBoolean("recommend"));
 				reviews.setReview(rs.getString("review"));
 				locations.add(reviews);
 			}
@@ -193,7 +195,7 @@ public class ReviewDao {
 				review.setUsername(rs.getString("username"));
 				review.setLocation(rs.getString("location"));
 				review.setRating(rs.getDouble("rating"));
-				review.setRecommended(rs.getBoolean("recommended"));
+				review.setRecommend(rs.getBoolean("recommend"));
 				review.setReview(rs.getString("review"));
 				//Reviews.add(review);
 			}
@@ -222,7 +224,7 @@ public class ReviewDao {
 				review.setUsername(rs.getString("username"));
 				review.setLocation(rs.getString("location"));
 				review.setRating(rs.getDouble("rating"));
-				review.setRecommended(rs.getBoolean("recommended"));
+				review.setRecommend(rs.getBoolean("recommend"));
 				review.setReview(rs.getString("review"));
 			}
 		} catch (SQLException e) {

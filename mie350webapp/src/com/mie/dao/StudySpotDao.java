@@ -31,7 +31,7 @@ public class StudySpotDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into Study_Spots_DB(Location_ID, Name, Area, Location, Google_map_link, Capacity, Opening_time, Closing_time, Main_discipline/major_there, Does_it_Have_computers, Does_it_have_food_spots_(Yes/No), Does_it_have_group_tables?_(Yes/No), Indoors_or_Outdoors, Rating_(1-5)_[update]) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+					.prepareStatement("insert into Study_Spots_DB(locationID, spotName, area, location, mapLink, capacity, oTime, cTime, discipline, computers, foodSpots, groupTables, indoors, rating) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			
 					// Parameters start with 1
 			preparedStatement.setInt(1, studyspot.getLocationID());
@@ -62,7 +62,7 @@ public class StudySpotDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("delete from Study_Spots_DB where Location ID=?");
+					.prepareStatement("delete from Study_Spots_DB where locationID=?");
 			// Parameters start with 1
 			preparedStatement.setInt(1, studySpotId);
 			preparedStatement.executeUpdate();
@@ -78,8 +78,8 @@ public class StudySpotDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("update Study_Spots_DB set Name=?, Area=?, Location=?, Google_map_link=?, Capacity=?, Opening_time=?, Closing_time=?, Main_discipline/major there=?, Does_it_Have_computers=?, Does_it_have_food_spots_(Yes/No)=?, Does_it_have_group_tables?_(Yes/No)=?, Indoors_or_Outdoors=?, Rating_(1-5)_[update]=?"
-							+ " where Location_ID=?");
+					.prepareStatement("update Study_Spots_DB set locationID=?, spotName=?, area=?, location=?, mapLink=?, capacity=?, oTime=?, cTime=?, discipline=?, computers=?, foodSpots=?, groupTables=?, indoors=?, rating=?"
+							+ " where locationID=?");
 			// Parameters start with 1
 			preparedStatement.setInt(1, studyspot.getLocationID());
 			preparedStatement.setString(2, studyspot.getName());
@@ -114,20 +114,20 @@ public class StudySpotDao {
 			ResultSet rs = statement.executeQuery("select * from Study_Spots_DB");
 			while (rs.next()) {
 				StudySpot studyspot = new StudySpot();
-				studyspot.setLocationID(rs.getInt("Location ID"));
-				studyspot.setName(rs.getString("Name"));
-				studyspot.setArea(rs.getString("Area"));
-				studyspot.setLocation(rs.getString("Location"));
-				studyspot.setLink(rs.getString("Google map link"));
-				studyspot.setCapacity(rs.getInt("Capacity"));
-				studyspot.setOpeningTime(rs.getDate("Opening time"));
-				studyspot.setClosingTime(rs.getDate("Closing time"));
-				studyspot.setMainMajor(rs.getString("Main discipline/major there"));
-				studyspot.setHasComputers(rs.getBoolean("Does it Have computers"));
-				studyspot.setHasFood(rs.getBoolean("Does it have food spots (Yes/No)"));
-				studyspot.setHasGroupTables(rs.getBoolean("Does it have group tables? (Yes/No)"));
-				studyspot.setIndoors(rs.getBoolean("Indoors or Outdoors"));
-				studyspot.setRating(rs.getDouble("Rating (1-5) [update]"));
+				studyspot.setLocationID(rs.getInt("locationID"));
+				studyspot.setName(rs.getString("spotName"));
+				studyspot.setArea(rs.getString("area"));
+				studyspot.setLocation(rs.getString("location"));
+				studyspot.setLink(rs.getString("mapLink"));
+				studyspot.setCapacity(rs.getInt("capacity"));
+				studyspot.setOpeningTime(rs.getDate("oTime"));
+				studyspot.setClosingTime(rs.getDate("cTime"));
+				studyspot.setMainMajor(rs.getString("discipline"));
+				studyspot.setHasComputers(rs.getBoolean("computers"));
+				studyspot.setHasFood(rs.getBoolean("foodSpots"));
+				studyspot.setHasGroupTables(rs.getBoolean("groupTables"));
+				studyspot.setIndoors(rs.getBoolean("indoors"));
+				studyspot.setRating(rs.getDouble("rating"));
 				StudySpots.add(studyspot);
 			}
 		} catch (SQLException e) {
@@ -147,25 +147,25 @@ public class StudySpotDao {
 		StudySpot studyspot = new StudySpot();
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Study_Spots_DB where Location_ID=?");
+					.prepareStatement("select * from Study_Spots_DB where locationID=?");
 			preparedStatement.setInt(1, locationID);
 			ResultSet rs = preparedStatement.executeQuery();
 
 			if (rs.next()) {
-				studyspot.setLocationID(rs.getInt("Location ID"));
-				studyspot.setName(rs.getString("Name"));
-				studyspot.setArea(rs.getString("Area"));
-				studyspot.setLocation(rs.getString("Location"));
-				studyspot.setLink(rs.getString("Google map link"));
-				studyspot.setCapacity(rs.getInt("Capacity"));
-				studyspot.setOpeningTime(rs.getDate("Opening time"));
-				studyspot.setClosingTime(rs.getDate("Closing time"));
-				studyspot.setMainMajor(rs.getString("Main discipline/major there"));
-				studyspot.setHasComputers(rs.getBoolean("Does it Have computers"));
-				studyspot.setHasFood(rs.getBoolean("Does it have food spots (Yes/No)"));
-				studyspot.setHasGroupTables(rs.getBoolean("Does it have group tables? (Yes/No)"));
-				studyspot.setIndoors(rs.getBoolean("Indoors or Outdoors"));
-				studyspot.setRating(rs.getDouble("Rating (1-5) [update]"));
+				studyspot.setLocationID(rs.getInt("locationID"));
+				studyspot.setName(rs.getString("spotName"));
+				studyspot.setArea(rs.getString("area"));
+				studyspot.setLocation(rs.getString("location"));
+				studyspot.setLink(rs.getString("mapLink"));
+				studyspot.setCapacity(rs.getInt("capacity"));
+				studyspot.setOpeningTime(rs.getDate("oTime"));
+				studyspot.setClosingTime(rs.getDate("cTime"));
+				studyspot.setMainMajor(rs.getString("discipline"));
+				studyspot.setHasComputers(rs.getBoolean("computers"));
+				studyspot.setHasFood(rs.getBoolean("foodSpots"));
+				studyspot.setHasGroupTables(rs.getBoolean("groupTables"));
+				studyspot.setIndoors(rs.getBoolean("indoors"));
+				studyspot.setRating(rs.getDouble("rating"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -182,30 +182,31 @@ public class StudySpotDao {
 		List<StudySpot> StudySpots = new ArrayList<StudySpot>();
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Study_Spots_DB where Name LIKE ? OR Area LIKE ? OR Location LIKE ? OR Main_discipline/major_there LIKE ?");
+					.prepareStatement("select * from Study_Spots_DB where spotName LIKE ? OR area LIKE ? OR location LIKE ?");
 
 			preparedStatement.setString(1, "%" + keyword + "%");
 			preparedStatement.setString(2, "%" + keyword + "%");
 			preparedStatement.setString(3, "%" + keyword + "%");
-			preparedStatement.setString(4, "%" + keyword + "%");
 
 			ResultSet rs = preparedStatement.executeQuery();
 			while (rs.next()) {
 				StudySpot studyspot = new StudySpot();
-				studyspot.setLocationID(rs.getInt("Location ID"));
-				studyspot.setName(rs.getString("Name"));
-				studyspot.setArea(rs.getString("Area"));
-				studyspot.setLocation(rs.getString("Location"));
-				studyspot.setLink(rs.getString("Google map link"));
-				studyspot.setCapacity(rs.getInt("Capacity"));
-				studyspot.setOpeningTime(rs.getDate("Opening time"));
-				studyspot.setClosingTime(rs.getDate("Closing time"));
-				studyspot.setMainMajor(rs.getString("Main discipline/major there"));
-				studyspot.setHasComputers(rs.getBoolean("Does it Have computers"));
-				studyspot.setHasFood(rs.getBoolean("Does it have food spots (Yes/No)"));
-				studyspot.setHasGroupTables(rs.getBoolean("Does it have group tables? (Yes/No)"));
-				studyspot.setIndoors(rs.getBoolean("Indoors or Outdoors"));
-				studyspot.setRating(rs.getDouble("Rating (1-5) [update]"));
+				studyspot.setLocationID(rs.getInt("locationID"));
+				studyspot.setName(rs.getString("spotName"));
+				studyspot.setArea(rs.getString("area"));
+				studyspot.setLocation(rs.getString("location"));
+				studyspot.setLink(rs.getString("mapLink"));
+				studyspot.setCapacity(rs.getInt("capacity"));
+				studyspot.setOpeningTime(rs.getDate("oTime"));
+				studyspot.setClosingTime(rs.getDate("cTime"));
+				studyspot.setMainMajor(rs.getString("discipline"));
+				studyspot.setHasComputers(rs.getBoolean("computers"));
+				studyspot.setHasFood(rs.getBoolean("foodSpots"));
+				studyspot.setHasGroupTables(rs.getBoolean("groupTables"));
+				studyspot.setIndoors(rs.getBoolean("indoors"));
+				studyspot.setRating(rs.getDouble("rating"));
+				
+				StudySpots.add(studyspot);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
