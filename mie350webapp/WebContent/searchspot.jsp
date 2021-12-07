@@ -23,23 +23,22 @@
         </div>
       </div>
     </section><!-- End Header 2 -->
+    <br><br>
     <main role="main" class="container-fluid">
       <div class="row">
         <div class="col-md-4">
-          <p>Search for a study spot and filter by your desired criteria&nbsp; &nbsp; </p>
-
           <div class="card bg-light">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-8">
-                  <div class="form-group">
+                  <div class="form-group" style="display:none">
                       Near an address
                       <input class="form-control" id="search-address" placeholder="Enter an address" type="text">
                   </div>
                 </div>
 
                 <div class="col-md-4">
-                  <div class="form-group">
+                  <div class="form-group" style="display:none">
                       Within
                       <select id="search-radius" class="form-control">
                         <option value="400">2 blocks</option>
@@ -54,16 +53,25 @@
 
               <div class="row">
                 <div class="col-md-12">
-                  <div class="form-group">
+                  <div class="form-group" style="display:none">
                       Search by name
                       <input class="form-control" id="search-name" placeholder="Enter a business or organization name" type="text">
                   </div>
                 </div>
               </div>
-
-              <button class="btn btn-primary" id="btnSearch"><i class="fa fa-search"></i> Search</button>
-              <a href="/" class="btn btn-secondary" id="btnReset" title="Reset"><i class="fa fa-repeat" aria-hidden="true"></i> Reset</a>
+              <div class = "row">
+                <p>View the list of study spots and save your favorite ones. Select 'List View' to see the full list of study spots and their information. Hover over any green
+                  marker to see more details about the study spot.
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                <a href = "login.jsp"><button class = "btn btn-secondary">Save a spot</button></a>
+              <!-- <button class="btn btn-primary" id="btnSearch" style="display:none"><i class="fa fa-search"></i> Search</button>
+              <a href="/" class="btn btn-secondary" id="btnReset" title="Reset" style="display:none"><i class="fa fa-repeat" aria-hidden="true"></i> Reset</a> -->
               <button class="btn btn-dark" id="btnViewMode" title="Change view"><i class="fa fa-list"></i> List view</button>
+            </div>  
+            </div>
 
               </div>
             </div>
