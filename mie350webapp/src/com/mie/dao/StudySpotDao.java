@@ -39,9 +39,9 @@ public class StudySpotDao {
 			preparedStatement.setString(3, studyspot.getArea());
 			preparedStatement.setString(4, studyspot.getLocation());
 			preparedStatement.setString(5, studyspot.getLink());
-			preparedStatement.setInt(6, studyspot.getCapacity());
-			preparedStatement.setDate(7, new java.sql.Date(studyspot.getOpeningTime().getTime()));
-			preparedStatement.setDate(8, new java.sql.Date(studyspot.getClosingTime().getTime()));
+			preparedStatement.setString(6, studyspot.getCapacity());
+			preparedStatement.setString(7, studyspot.getOpeningTime());
+			preparedStatement.setString(8, studyspot.getClosingTime());
 			preparedStatement.setString(9, studyspot.getMainMajor());
 			preparedStatement.setBoolean(10, studyspot.isHasComputers());
 			preparedStatement.setBoolean(11, studyspot.isHasFood());
@@ -69,6 +69,11 @@ public class StudySpotDao {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+
+
+
+
+
 		}
 	}
 
@@ -86,9 +91,9 @@ public class StudySpotDao {
 			preparedStatement.setString(3, studyspot.getArea());
 			preparedStatement.setString(4, studyspot.getLocation());
 			preparedStatement.setString(5, studyspot.getLink());
-			preparedStatement.setInt(6, studyspot.getCapacity());
-			preparedStatement.setDate(7, new java.sql.Date(studyspot.getOpeningTime().getTime()));
-			preparedStatement.setDate(8, new java.sql.Date(studyspot.getClosingTime().getTime()));
+			preparedStatement.setString(6, studyspot.getCapacity());
+			preparedStatement.setString(7, studyspot.getOpeningTime();
+			preparedStatement.setString(8, studyspot.getClosingTime();
 			preparedStatement.setString(9, studyspot.getMainMajor());
 			preparedStatement.setBoolean(10, studyspot.isHasComputers());
 			preparedStatement.setBoolean(11, studyspot.isHasFood());
@@ -102,12 +107,12 @@ public class StudySpotDao {
 		}
 	}
 
-	public List<StudySpot> getAllStudySpots() {
+	public ArrayList<StudySpot> getAllStudySpots() {
 		/**
 		 * This method returns the list of all study spots in the form of a List
 		 * object.
 		 */
-		List<StudySpot> StudySpots = new ArrayList<StudySpot>();
+		ArrayList<StudySpot> StudySpots = new ArrayList<StudySpot>();
 		try {
 			Statement statement = connection.createStatement();
 			// System.out.println("getting StudySpots from table");
@@ -119,9 +124,9 @@ public class StudySpotDao {
 				studyspot.setArea(rs.getString("area"));
 				studyspot.setLocation(rs.getString("location"));
 				studyspot.setLink(rs.getString("mapLink"));
-				studyspot.setCapacity(rs.getInt("capacity"));
-				studyspot.setOpeningTime(rs.getDate("oTime"));
-				studyspot.setClosingTime(rs.getDate("cTime"));
+				studyspot.setCapacity(rs.getString("capacity"));
+				studyspot.setOpeningTime(rs.getString("oTime"));
+				studyspot.setClosingTime(rs.getString("cTime"));
 				studyspot.setMainMajor(rs.getString("discipline"));
 				studyspot.setHasComputers(rs.getBoolean("computers"));
 				studyspot.setHasFood(rs.getBoolean("foodSpots"));
@@ -157,9 +162,9 @@ public class StudySpotDao {
 				studyspot.setArea(rs.getString("area"));
 				studyspot.setLocation(rs.getString("location"));
 				studyspot.setLink(rs.getString("mapLink"));
-				studyspot.setCapacity(rs.getInt("capacity"));
-				studyspot.setOpeningTime(rs.getDate("oTime"));
-				studyspot.setClosingTime(rs.getDate("cTime"));
+				studyspot.setCapacity(rs.getString("capacity"));
+				studyspot.setOpeningTime(rs.getString("oTime"));
+				studyspot.setClosingTime(rs.getString("cTime"));
 				studyspot.setMainMajor(rs.getString("discipline"));
 				studyspot.setHasComputers(rs.getBoolean("computers"));
 				studyspot.setHasFood(rs.getBoolean("foodSpots"));
@@ -196,16 +201,16 @@ public class StudySpotDao {
 				studyspot.setArea(rs.getString("area"));
 				studyspot.setLocation(rs.getString("location"));
 				studyspot.setLink(rs.getString("mapLink"));
-				studyspot.setCapacity(rs.getInt("capacity"));
-				studyspot.setOpeningTime(rs.getDate("oTime"));
-				studyspot.setClosingTime(rs.getDate("cTime"));
+				studyspot.setCapacity(rs.getString("capacity"));
+				studyspot.setOpeningTime(rs.getString("oTime"));
+				studyspot.setClosingTime(rs.getString("cTime"));
 				studyspot.setMainMajor(rs.getString("discipline"));
 				studyspot.setHasComputers(rs.getBoolean("computers"));
 				studyspot.setHasFood(rs.getBoolean("foodSpots"));
 				studyspot.setHasGroupTables(rs.getBoolean("groupTables"));
 				studyspot.setIndoors(rs.getBoolean("indoors"));
 				studyspot.setRating(rs.getDouble("rating"));
-				
+
 				StudySpots.add(studyspot);
 			}
 		} catch (SQLException e) {

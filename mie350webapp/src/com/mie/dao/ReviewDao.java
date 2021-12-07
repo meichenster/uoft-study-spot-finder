@@ -32,7 +32,6 @@ public class ReviewDao {
 		/**
 		 * This method adds a new StudySpot to the database.
 		 */
-		System.out.println("HELLo!!!");
 		try {
 			PreparedStatement preparedStatement = connection
 					.prepareStatement("insert into Reviews_DB(reviewID, locationID, username, location, rating, recommend, review) values (?, ?, ?, ?, ?, ?, ?)");

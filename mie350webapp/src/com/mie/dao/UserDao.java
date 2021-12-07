@@ -140,5 +140,31 @@ public class UserDao {
 		// 	e.printStackTrace();
 		// }
 	}
+
+	public ArrayList<User> getAllUsers() {
+		/**
+		 * This method returns the list of all users in the form of a List
+		 * object.
+		 */
+		ArrayList<User> Users = new ArrayList<User>();
+		try {
+			Statement statement = currentCon.createStatement();
+			// System.out.println("getting Reviews from table");
+			ResultSet rs = statement.executeQuery("select * from User_Information_DB");
+			while (rs.next()) {
+				User user = new User();
+				user.setUsername(rs.getString("username"));
+				user.setFaculty(rs.getString("faculty"));
+				user.setProgram(rs.getString("program"));
+				user.setYearOfStudy(rs.getInt("yearStudy"));
+				user.setDateCreated(rs.getDate("accountDateCreated"));
+				Users.add(user);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return Users;
+	}
 }
 

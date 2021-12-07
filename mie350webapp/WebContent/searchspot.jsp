@@ -15,7 +15,6 @@
 	<!-- ======= Header 2 ======= -->
     <section class="breadcrumbs">
       <div class="container">
-
         <div class="d-flex justify-content-between align-items-center">
           <ol>
             <li><a href="index.jsp">Home</a></li>
@@ -24,7 +23,7 @@
         </div>
       </div>
     </section><!-- End Header 2 -->
-    <main role="main" class="contact">
+    <main role="main" class="container-fluid">
       <div class="row">
         <div class="col-md-4">
           <p>Search for a study spot and filter by your desired criteria&nbsp; &nbsp; </p>

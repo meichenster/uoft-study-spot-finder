@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR" import = "java.util.ArrayList, com.mie.dao.*, com.mie.model.*"%>
+	pageEncoding="EUC-KR" import = "javax.servlet.http.HttpSession, javax.servlet.http.HttpServletRequest,  javax.servlet.http.HttpServletResponse, javax.servlet.http.HttpServlet, java.util.ArrayList, com.mie.dao.*, com.mie.model.*"%>
 <!DOCTYPE html>
 <html lang="en">
 	<%@ include file="head.jsp"%> 
@@ -7,11 +7,11 @@
 
 <body>
   <%
-  Review reviews = new Review();
-  ReviewDao dao = new ReviewDao();
-  ArrayList <Review> listofall = new ArrayList <Review>();
-  listofall = dao.getReviews(reviews);
-  request.setAttribute("listofall", listofall);
+  User user = new User();
+  UserDao dao = new UserDao();
+  ArrayList <User> listofnames = new ArrayList <User>();
+  listofnames = dao.getAllUsers();
+  request.setAttribute("listofnames", listofnames);
 %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
   <!-- ======= Header ======= -->
@@ -44,31 +44,43 @@
 
         <div class="section-title">
           <h2>My Saved Spots</h2>
-          <p>View your saved spots</p><br>
-            <div id = "registerstuff" class = "hidden">
-          </div>
-        </div>
-        
+          <p>Please select your Username</p><br>
+          <form action = "SavedSpotsController">
+          <select class="form-control" name = "un" onchange="this.form.submit()">
+            <option disabled selected value> </option> 
+          <c:forEach items="${listofnames}" var="User"> 
+            <option value="${User.username}">${User.username}</option>
+          </c:forEach>
+        </select>
+        <br>
+      </form>
+        </div> 
+        <%
+		    String username = (String) session.getAttribute("username");
+        System.out.print(username);
+        StudySpot studyspots = new StudySpot();
+        SavedSpotsDao dao2 = new SavedSpotsDao();
+        ArrayList <StudySpot> listofallspots = new ArrayList <StudySpot>();
+        listofallspots = dao2.getAllSavedSpots(username);
+        request.setAttribute("listofallspots", listofallspots);
+        System.out.print(listofallspots);
+      %>     
         <br><br>
-        <c:forEach items = "${listofall}" var = "Review">
-          <div class="faq-list">
-            <ul>
-              <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-                <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1"><c:out value = "${Review.location}"/><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                 <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                  <p class = "faq-list">
-                    Location ID: <c:out value = "${Review.locationID}"/><br>
-                    Rating: <c:out value = "${Review.rating}"/><br>
-                    Review ID: <c:out value = "${Review.reviewID}"/><br>
-                    Username: <c:out value = "${Review.username}"/><br>
-                   </p>
-                 </div>
-               </li>
-            </ul>
+        <c:forEach items = "${listofallspots}" var = "spots">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="info-box mb-4">
+              <i class="bx bx-map"></i>
+              <h3> <c:out value = "${spots.location}"/></h3>
+              <p>
+              Location ID: <c:out value = "${spots.locationID}"/><br> 
+              </p>
+            </div>
+          </div>
           </div>
         </c:forEach>
       </div>
-    </section><!-- End Frequently Asked Questions Section -->
+    </section><!-- End Saved Spots Section -->
   </main><!-- End #main -->
 
 		<!-- ======= Footer ======= -->

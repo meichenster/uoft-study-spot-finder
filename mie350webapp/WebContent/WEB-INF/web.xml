@@ -49,6 +49,16 @@
 	</servlet-mapping>
 	<servlet>
 		<description></description>
+		<display-name>SavedSpotsController</display-name>
+		<servlet-name>SavedSpotsController</servlet-name>
+		<servlet-class>com.mie.controller.SavedSpotsController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SavedSpotsController</servlet-name>
+		<url-pattern>/SavedSpotsController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
 		<display-name>LogoutServlet</display-name>
 		<servlet-name>LogoutServlet</servlet-name>
 		<servlet-class>com.mie.controller.LogoutServlet</servlet-class>

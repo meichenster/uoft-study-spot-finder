@@ -15,9 +15,9 @@ public class StudySpot {
 
     private String location;
     private String link;
-    private int capacity;
-    private Date openingTime;
-    private Date closingTime;
+    private String capacity;
+    private String openingTime;
+    private String closingTime;
 
     private String mainMajor;
     private boolean hasComputers;
@@ -69,27 +69,27 @@ public class StudySpot {
         this.link = link;
     }
 
-    public int getCapacity() {
+    public String getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(String capacity) {
         this.capacity = capacity;
     }
 
-    public Date getOpeningTime() {
+    public String getOpeningTime() {
         return openingTime;
     }
 
-    public void setOpeningTime(Date openingTime) {
+    public void setOpeningTime(String openingTime) {
         this.openingTime = openingTime;
     }
 
-    public Date getClosingTime() {
+    public String getClosingTime() {
         return closingTime;
     }
 
-    public void setClosingTime(Date closingTime) {
+    public void setClosingTime(String closingTime) {
         this.closingTime = closingTime;
     }
 

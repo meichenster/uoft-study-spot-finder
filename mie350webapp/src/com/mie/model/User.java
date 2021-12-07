@@ -97,7 +97,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "Student [username=" + username + ", password=" + password + 
+		return "User [username=" + username + ", password=" + password + 
 		", faculty=" + faculty + ", program=" + program + 
 		", year of study=" + yearOfStudy + ", date created=" + dateCreated + "]";
 	}
