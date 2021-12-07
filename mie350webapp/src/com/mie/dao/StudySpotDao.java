@@ -92,8 +92,8 @@ public class StudySpotDao {
 			preparedStatement.setString(4, studyspot.getLocation());
 			preparedStatement.setString(5, studyspot.getLink());
 			preparedStatement.setString(6, studyspot.getCapacity());
-			preparedStatement.setString(7, studyspot.getOpeningTime();
-			preparedStatement.setString(8, studyspot.getClosingTime();
+			preparedStatement.setString(7, studyspot.getOpeningTime());
+			preparedStatement.setString(8, studyspot.getClosingTime());
 			preparedStatement.setString(9, studyspot.getMainMajor());
 			preparedStatement.setBoolean(10, studyspot.isHasComputers());
 			preparedStatement.setBoolean(11, studyspot.isHasFood());
