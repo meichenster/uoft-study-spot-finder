@@ -48,25 +48,24 @@ public class SavedSpotsController extends HttpServlet {
 		 * the reviews.jsp page.
 		 */
 		User user = new User();
-		String username=request.getParameter("un");
-		HttpSession session = request.getSession(false); 
-		session.setAttribute("username", username);
-		
-		
-		// String username = request.getParameter("username");
-		// String location = request.getParameter("location");
-		// String locationID = request.getParameter("locationID");
-		// String rating = request.getParameter("rating");
-		
-		// // update database
-		// savedDao.addSavedSpot(username, location, locationID, rating);
+		try{
+			String username=request.getParameter("un");
+			HttpSession session = request.getSession(false); 
+			session.setAttribute("username", username);
+			String location = request.getParameter("location");
+			String locationID = request.getParameter("locationID");
+			String rating = request.getParameter("rating");
+			response.sendRedirect("mysavedspots.jsp");
+	
+		// update database
+		savedDao.addSavedSpot(username, location, locationID, rating);
 
-		// // update user's list
-		// StudySpot studyspot = studyDao.getStudySpotById(locationID);
+		// update user's list
+		StudySpot studyspot = studyDao.getStudySpotById(locationID);
 		// User user = 
 
-
-		response.sendRedirect("mysavedspots.jsp");
+	}catch(ServletException e){
+	}
 		
 	}
 	protected void postGet(HttpServletRequest request,

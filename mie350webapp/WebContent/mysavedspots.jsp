@@ -57,17 +57,15 @@
         </div> 
         <%
 		    String username = (String) session.getAttribute("username");
-        System.out.print(username);
         StudySpot studyspots = new StudySpot();
         SavedSpotsDao dao2 = new SavedSpotsDao();
         ArrayList <StudySpot> listofallspots = new ArrayList <StudySpot>();
         listofallspots = dao2.getAllSavedSpots(username);
         request.setAttribute("listofallspots", listofallspots);
-        System.out.print(listofallspots);
       %>     
         <br><br>
-        <c:forEach items = "${listofallspots}" var = "spots">
         <div class="row">
+        <c:forEach items = "${listofallspots}" var = "spots">
           <div class="col-lg-3">
             <div class="info-box mb-4">
               <i class="bx bx-map"></i>
@@ -77,8 +75,8 @@
               </p>
             </div>
           </div>
-          </div>
         </c:forEach>
+      </div>
       </div>
     </section><!-- End Saved Spots Section -->
   </main><!-- End #main -->

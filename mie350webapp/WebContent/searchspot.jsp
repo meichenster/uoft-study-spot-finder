@@ -26,6 +26,7 @@
     <br><br>
     <main role="main" class="container-fluid">
       <div class="row">
+        <div class="col-md-1"></div>
         <div class="col-md-4">
           <div class="card bg-light">
             <div class="card-body">
@@ -77,7 +78,7 @@
             </div>
           </div>
 
-          <div class="col-md-8">
+          <div class="col-md-6">
             <div id="mapCanvas" style="display: block; height: 1000px;"></div>
             <div id="listCanvas" style="display: none">
               <h2 class="list-header hidden-xs">Search results <small id="list-result-count"></small></h2>
