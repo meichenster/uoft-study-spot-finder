@@ -67,8 +67,8 @@ public class UserDao {
 				user.setUsername(rs.getString("username"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setProgram(rs.getString("program"));
-				user.setYearOfStudy(rs.getInt("year_of_study"));
-				user.setDateCreated(rs.getDate("account_creation_date"));
+				user.setYearOfStudy(rs.getInt("yearStudy"));
+				user.setDateCreated(rs.getDate("accountDateCreated"));
 			}
 		}
 
@@ -97,8 +97,8 @@ public class UserDao {
 				user.setUsername(rs.getString("username"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setProgram(rs.getString("program"));
-				user.setYearOfStudy(rs.getInt("year_of_study"));
-				user.setDateCreated(rs.getDate("account_creation_date"));
+				user.setYearOfStudy(rs.getInt("yearStudy"));
+				user.setDateCreated(rs.getDate("accountDateCreated"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -117,20 +117,28 @@ public class UserDao {
 			preparedStatement.setString(1, user.getUsername());
 			preparedStatement.setString(2, user.getPassword());
 			preparedStatement.executeUpdate();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		try {
-			PreparedStatement preparedStatement = currentCon
+			PreparedStatement preparedStatement2 = currentCon
 					.prepareStatement("insert into User_Information_DB(username,faculty,program,yearStudy,accountDateCreated) values (?,?,?,?,?)");
-			preparedStatement.setString(1, user.getUsername());
-			preparedStatement.setString(2, user.getFaculty());
-			preparedStatement.setString(3, user.getProgram());
-			preparedStatement.setInt(4, user.getYearOfStudy());
-			preparedStatement.setDate(5, new java.sql.Date(user.getDateCreated().getTime()));
+			preparedStatement2.setString(1, user.getUsername());
+			preparedStatement2.setString(2, user.getFaculty());
+			preparedStatement2.setString(3, user.getProgram());
+			preparedStatement2.setInt(4, user.getYearOfStudy());
+			preparedStatement2.setDate(5, new java.sql.Date(user.getDateCreated().getTime()));
+			preparedStatement2.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		// try {
+		// 	PreparedStatement preparedStatement = currentCon
+		// 			.prepareStatement("insert into User_Information_DB(username,faculty,program,yearStudy,accountDateCreated) values (?,?,?,?,?)");
+		// 	preparedStatement.setString(1, user.getUsername());
+		// 	preparedStatement.setString(2, user.getFaculty());
+		// 	preparedStatement.setString(3, user.getProgram());
+		// 	preparedStatement.setInt(4, user.getYearOfStudy());
+		// 	preparedStatement.setDate(5, new java.sql.Date(user.getDateCreated().getTime()));
+		// } catch (SQLException e) {
+		// 	e.printStackTrace();
+		// }
 	}
 }
+

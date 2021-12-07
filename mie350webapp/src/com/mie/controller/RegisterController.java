@@ -5,8 +5,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.time.format.DateTimeFormatter;  
-import java.time.LocalDate; 
 import java.util.*;  
 
 import com.mie.model.*;
@@ -31,7 +29,13 @@ public class RegisterController extends HttpServlet {
 		user.setPassword(request.getParameter("pw"));
 		user.setFaculty(request.getParameter("fac"));
 		user.setProgram(request.getParameter("program"));
-		user.setYearOfStudy(Integer.parseInt(request.getParameter("year")));
+		try{
+			user.setYearOfStudy(Integer.parseInt(request.getParameter("year")));
+
+		}catch(NumberFormatException e){
+
+		}
+		
 		user.setDateCreated(date);
 
 		// add user to the database
@@ -57,8 +61,8 @@ public class RegisterController extends HttpServlet {
 				session.setAttribute("faculty", user.getFaculty());
 				session.setAttribute("faculty", user.getFaculty());
 				session.setAttribute("program", user.getProgram());
-				session.setAttribute("yearOfStudy", user.getYearOfStudy());
-				session.setAttribute("dateCreated", user.getDateCreated());
+				session.setAttribute("yearStudy", user.getYearOfStudy());
+				session.setAttribute("accountDateCreated", user.getDateCreated());
 
 				/**
 				 * Redirect to the members-only home page.

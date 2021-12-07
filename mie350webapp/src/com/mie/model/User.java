@@ -11,7 +11,6 @@ public class User {
 
 	private String username;
 	private String password;
-
 	private String faculty;
 	private String program;
 	private int yearOfStudy;

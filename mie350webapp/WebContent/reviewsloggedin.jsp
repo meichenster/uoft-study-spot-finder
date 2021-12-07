@@ -48,7 +48,7 @@
           <div class="text-center"><button class = "button" onclick="javascript:toggleDiv('registerstuff');">Write a Review</button>
             <br><br>
             <div id = "registerstuff" class = "hidden">
-              <form action = "RegisterController" class="my-login-validation" novalidate="">
+              <form action = "ReviewController" class="my-login-validation" novalidate="">
 								<div class="form-group">
 									<label for="loc"><b>Location</b></label>
 									<select name="loc" id="loc" class="form-control">

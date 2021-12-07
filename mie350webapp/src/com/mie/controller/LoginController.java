@@ -44,8 +44,8 @@ public class LoginController extends HttpServlet {
 				session.setAttribute("username", user.getUsername());
 				session.setAttribute("faculty", user.getFaculty());
 				session.setAttribute("program", user.getProgram());
-				session.setAttribute("yearOfStudy", user.getYearOfStudy());
-				session.setAttribute("dateCreated", user.getDateCreated());
+				session.setAttribute("yearStudy", user.getYearOfStudy());
+				session.setAttribute("accountDateCreated", user.getDateCreated());
 				/**
 				 * Redirect to the members-only home page.
 				 */
