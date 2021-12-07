@@ -13,8 +13,8 @@ public class User {
 	private String password;
 	private String faculty;
 	private String program;
-	private int yearOfStudy;
-	private Date dateCreated;
+	private int yearStudy;
+	private Date accountDateCreated;
 	private boolean valid;
 	private ArrayList<StudySpot> savedStudySpots;
 
@@ -51,19 +51,19 @@ public class User {
 	}
 
 	public int getYearOfStudy() {
-		return yearOfStudy;
+		return yearStudy;
 	}
 
-	public void setYearOfStudy(int yearOfStudy) {
-		this.yearOfStudy = yearOfStudy;
+	public void setYearOfStudy(int yearStudy) {
+		this.yearStudy = yearStudy;
 	}
 
 	public Date getDateCreated() {
-		return dateCreated;
+		return accountDateCreated;
 	}
 
-	public void setDateCreated(Date dateCreated) {
-		this.dateCreated = dateCreated;
+	public void setDateCreated(Date accountDateCreated) {
+		this.accountDateCreated = accountDateCreated;
 	}
 
 	public boolean isValid() {
@@ -99,6 +99,6 @@ public class User {
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + 
 		", faculty=" + faculty + ", program=" + program + 
-		", year of study=" + yearOfStudy + ", date created=" + dateCreated + "]";
+		", year of study=" + yearStudy + ", date created=" + accountDateCreated + "]";
 	}
 }

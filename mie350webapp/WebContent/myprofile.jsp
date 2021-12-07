@@ -11,8 +11,8 @@
 		String username = (String) session.getAttribute("username");
     String faculty = (String) session.getAttribute("faculty");
     String program = (String) session.getAttribute("program");
-    Integer yearOfStudy = (Integer) session.getAttribute("yearOfStudy");
-    Date dateCreated = (Date) session.getAttribute("dateCreated");
+    Integer yearStudy = (Integer) session.getAttribute("yearStudy");
+    Date accountDateCreated = (Date) session.getAttribute("accountDateCreated");
 	%>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
@@ -27,7 +27,6 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Account overview</h2>
           <p>Profile Information</p>
@@ -62,10 +61,10 @@
             <div class="info-box  mb-4">
               <i class="bx bx-award"></i>
               <h3>Year of Study</h3>
-              <p><%=yearOfStudy%></p>
+              <p><%=yearStudy%></p>
             </div>
           </div>
-		<p>Member Since: <%=dateCreated%></p>
+		<p>Member Since: <%=accountDateCreated%></p>
     <div class="text-center"><a href="LogoutServlet"><button class = "button">Log Out</button></a>
         </div>
       </div>
