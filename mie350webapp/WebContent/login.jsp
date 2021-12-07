@@ -26,8 +26,8 @@
 <section class="contact section-bg">
 <body class="my-login-page">
 	<section class="h-100">
-		<div class="container h-100">
-			<div class="row justify-content-md-center h-100">
+		<div class="container">
+			<div class="row">
 				<div class="card-wrapper">
 					<div class="card fat">
 						<div class="card-body">
@@ -43,9 +43,6 @@
 
 								<div class="form-group">
 									<label for="password">Password
-										<a href="forgot.html" class="float-right">
-											Forgot Password?
-										</a>
 									</label>
 									<input id="password" type="password" class="form-control" name="pw" required data-eye>
 								    <div class="invalid-feedback">

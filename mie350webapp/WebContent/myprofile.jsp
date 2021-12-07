@@ -36,7 +36,7 @@
         <div class="row">
           <div class="col-lg-3">
             <div class="info-box mb-4">
-              <i class="bx bx-map"></i>
+              <i class="bx bx-laptop"></i>
               <h3>Username</h3>
               <p><%=username%></p>
             </div>
@@ -44,7 +44,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
-              <i class="bx bx-envelope"></i>
+              <i class="bx bxs-school"></i>
               <h3>Faculty</h3>
               <p><%=faculty%></p>
             </div>
@@ -52,7 +52,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
-              <i class="bx bx-phone-call"></i>
+              <i class="bx bx-book"></i>
               <h3>Program</h3>
               <p><%=program%></p>
             </div>
@@ -60,7 +60,7 @@
 			
 		  <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
-              <i class="bx bx-phone-call"></i>
+              <i class="bx bx-award"></i>
               <h3>Year of Study</h3>
               <p><%=yearOfStudy%></p>
             </div>

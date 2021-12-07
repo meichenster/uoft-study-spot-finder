@@ -162,22 +162,21 @@
 
           </div>
         </div>
-        
-        <br><br>
+
         <c:forEach items = "${listofall}" var = "Review">
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-              <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1"><c:out value = "${Review.location}"/><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1"><div class = "text-center"><h3>
+                <c:out value = "${Review.reviewID}"/>. <c:out value = "${Review.location}"/></h3><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></div></a>
                <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                 <p>
-                  <b>Review</b> <c:out value = "${Review.reviewID}"/> <b>:</b><br>
-                  <b>Reviewed by:</b> <c:out value = "${Review.username}"/><br>
-                  <b>Location ID:</b> <c:out value = "${Review.locationID}"/><br>
-                  <b>Rating:</b> <c:out value = "${Review.rating}"/><br>
-                  <b>Recommend?:</b> <c:out value = "${Review.recommend}"/><br>
-                  <b>Review:</b> <c:out value = "${Review.review}"/><br>
-                 </p>
+                  <div id = "element1"><b>Location ID:</b> <c:out value = "${Review.locationID}"/></div>
+                  <div id = "element1"><b>Rating (out of 5):</b> <c:out value = "${Review.rating}"/></div>
+                  <div id = "element1"><b>Recommend?:</b> <c:out value = "${Review.recommend}"/></div>
+                  <div id = "element1"><b>Reviewed by:</b> <c:out value = "${Review.username}"/></div><br><br>
+                  <div class = "text-center"><c:out value = "${Review.review}"/></div>
+                </p>
                </div>
              </li>
           </ul>

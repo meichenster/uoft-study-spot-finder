@@ -48,7 +48,7 @@ public class SavedSpotsController extends HttpServlet {
 		 * the reviews.jsp page.
 		 */
 		User user = new User();
-		try{
+		// try{
 			String username=request.getParameter("un");
 			HttpSession session = request.getSession(false); 
 			session.setAttribute("username", username);
@@ -58,14 +58,14 @@ public class SavedSpotsController extends HttpServlet {
 			response.sendRedirect("mysavedspots.jsp");
 	
 		// update database
-		savedDao.addSavedSpot(username, location, locationID, rating);
+		// savedDao.addSavedSpot(username, location, locationID, rating);
 
 		// update user's list
-		StudySpot studyspot = studyDao.getStudySpotById(locationID);
+		// StudySpot studyspot = studyDao.getStudySpotById(locationID);
 		// User user = 
 
-	}catch(ServletException e){
-	}
+	// }catch(ServletException e){
+	// }
 		
 	}
 	protected void postGet(HttpServletRequest request,
