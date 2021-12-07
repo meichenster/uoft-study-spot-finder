@@ -10,8 +10,9 @@
     ReviewDao dao = new ReviewDao();
     ArrayList <Review> listofall = new ArrayList <Review>();
     listofall = dao.getReviews(reviews);
-    System.out.print(listofall.get(0).getLocation());
+    request.setAttribute("listofall", listofall);
 	%>
+  <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
@@ -45,19 +46,20 @@
           <p>Read and write reviews about study spots on campus</p><br>
           <div class="text-center"><a href = "login.jsp"></href><button class = "button">Write a Review</button></a></div>
         </div>
-        <c:forEach items = "${reviews}" var ="review">
+        <c:forEach items = "${listofall}" var = "Review">
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-              <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">location <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1"><c:out value = "${Review.location}"/><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                 <p>
-                  hi can you see this <c:out value="${review.getLocation()}"/> fdsdsf<B><c:out
-                    value="${review.size()}" /> students</B> 
+                  Location ID: <c:out value = "${Review.locationID}"/><br>
+                  Rating: <c:out value = "${Review.rating}"/><br>
+                  Review ID: <c:out value = "${Review.reviewID}"/><br>
+                  Username: <c:out value = "${Review.username}"/><br>
                  </p>
                </div>
              </li>
-
           </ul>
         </div>
       </c:forEach>

@@ -151,14 +151,14 @@ public class ReviewDao {
 			stmt = currentCon.createStatement();
 			rs = stmt.executeQuery(searchQuery);
 			while(rs.next()){
-			//	Review review = new Review();
-				review.setReviewID(rs.getInt("Review ID"));
-				review.setLocationID(rs.getInt("Location ID"));
-				review.setUsername(rs.getString("Username"));
-				review.setLocation(rs.getString("Location"));
-				review.setRating(rs.getDouble("Rating"));
+				Review reviews = new Review();
+				reviews.setReviewID(rs.getInt("Review ID"));
+				reviews.setLocationID(rs.getInt("Location ID"));
+				reviews.setUsername(rs.getString("Username"));
+				reviews.setLocation(rs.getString("Location"));
+				reviews.setRating(rs.getDouble("Rating"));
 				// review.setRecommended(rs.getBoolean("Recommend?"));
-				locations.add(review);
+				locations.add(reviews);
 			}
 			// System.out.print(locations);
 		} catch (SQLException e) {
