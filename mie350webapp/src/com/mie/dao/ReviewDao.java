@@ -44,7 +44,7 @@ public class ReviewDao {
 			preparedStatement.setString(4, review.getLocation());
 			preparedStatement.setDouble(5, review.getRating());
 			preparedStatement.setBoolean(6, review.getRecommend());
-			preparedStatement.setString(7, review.getLocation());
+			preparedStatement.setString(7, review.getReview());
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {

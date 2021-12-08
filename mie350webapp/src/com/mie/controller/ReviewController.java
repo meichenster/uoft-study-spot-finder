@@ -42,16 +42,25 @@ public class ReviewController extends HttpServlet {
 		 */
 		
 		/**
+		 * Getting the current user and setting the username
+		 */
+		// User user = new User();
+		HttpSession session = request.getSession(true);
+		String username = (String) session.getAttribute("username");
+	   // User user = new User();
+		/**
 		 * This method retrieves all of the information entered in the form on
 		 * the reviews.jsp page.
 		 */
-		// User user = new User();
-		// HttpSession session = request.getSession(true);
-		// session.getAttribute(user.getUsername());
 		Review reviews = new Review();
-		reviews.setReviewID(Integer.parseInt(request.getParameter("reviewID")));
+		// * Setting the review ID
+		int reviewID = (Integer) session.getAttribute("reviewID");
+		reviews.setReviewID(reviewID);
+		// */
+		// reviews.setReviewID(Integer.parseInt(request.getParameter("reviewID")));
 		reviews.setLocationID(Integer.parseInt(request.getParameter("locationID")));
-		reviews.setUsername(request.getParameter("username"));
+		// reviews.setUsername(request.getParameter("username"));
+		reviews.setUsername(username);
 		reviews.setLocation(request.getParameter("location"));
 		reviews.setRating(Double.parseDouble(request.getParameter("rating")));
 		reviews.setRecommend(Boolean.parseBoolean(request.getParameter("recommend")));

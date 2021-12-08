@@ -90,7 +90,7 @@
             <br>
               <form action = "SavedSpotsController" class="my-login-validation" novalidate="">
 								<div class="form-group">
-                <p><b>Please select your Username</b></p>
+                <!-- <p><b>Please select your Username</b></p>
                 <form action = "SavedSpotsController">
                     <select class="form-control" name = "un">
                       <option disabled selected value> </option> 
@@ -99,7 +99,7 @@
                     </c:forEach>
                   </select>
                   <br>
-                </form>
+                </form> -->
 									<label for="location"><b>Please select a Location to save</b></label>
 									<select name="location" id="location" class="form-control">
 										<option value=""></option>

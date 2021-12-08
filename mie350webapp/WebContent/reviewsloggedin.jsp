@@ -11,7 +11,11 @@
   ReviewDao dao = new ReviewDao();
   ArrayList <Review> listofall = new ArrayList <Review>();
   listofall = dao.getReviews(reviews);
+  int reviewsize = listofall.size();
+  reviews.setReviewID(reviewsize+1);
+  session.setAttribute("reviewID", reviewsize + 1);
   request.setAttribute("listofall", listofall);
+  
 %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
   <!-- ======= Header ======= -->
@@ -39,6 +43,14 @@
 
 
   <!-- ======= Write a Review Section ======= -->
+  <%
+  User user = new User();
+  UserDao dao2 = new UserDao();
+  ArrayList <User> listofnames = new ArrayList <User>();
+  listofnames = dao2.getAllUsers();
+  request.setAttribute("listofnames", listofnames);
+  String username = (String) session.getAttribute("username");
+%>
     <section id="faq" class="faq">
       <div class="container" data-aos="fade-up">
 
@@ -49,20 +61,22 @@
             <br><br>
             <div id = "registerstuff" class = "hidden">
               <form action = "ReviewController" class="my-login-validation" novalidate="">
-                <div class="form-group">
+                <!-- <div class="form-group">
 									<label for="username"><b>Username</b></label>
-									<input id="username" type="text" class="form-control" name="username" required data-eye>
-									<div class="invalid-feedback">
-										Please enter a username
-								</div>
-                </div>
-                <div class="form-group">
+                  <select class="form-control" name = "username">
+                    <option disabled selected value> </option> 
+                      <c:forEach items="${listofnames}" var="User"> 
+                        <option value="${User.username}">${User.username}</option>
+                      </c:forEach>
+                </select>
+                </div> -->
+                <!-- <div class="form-group">
 									<label for="reviewID"><b>Review ID</b></label>
 									<input id="reviewID" type="number" class="form-control" name="reviewID" required data-eye>
 									<div class="invalid-feedback">
 										Please enter a review ID
 								</div>
-                </div>
+                </div> -->
                 <div class="form-group">
 									<label for="locationID"><b>Location ID</b></label>
 									<input id="locationID" type="locationID" class="form-control" name="locationID" required data-eye>
@@ -70,13 +84,6 @@
 										Please enter a location ID
 								</div>
                 </div>
-                <div class="form-group">
-									<label for="rating"><b>Rating (out of 5)</b></label>
-									<input id="rating" type="number" class="form-control" name="rating" required data-eye>
-									<div class="invalid-feedback">
-										Please type a number from 1-5
-								</div>
-              </div>
 								<div class="form-group">
 									<label for="location"><b>Location</b></label>
 									<select name="location" id="location" class="form-control">
@@ -125,7 +132,15 @@
 								</div>
 								<div class="form-group">
 									<label for="rating"><b>Rating (out of 5)</b></label>
-									<input id="rating" type="number" class="form-control" name="rating" required data-eye>
+									<!-- <input id="rating" type="number" class="form-control" name="rating" required data-eye> -->
+                  <select name="rating" id="rating" class="form-control">
+										<option value=""></option>
+										<option value=1>1</option>
+										<option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+									  </select>
 									<div class="invalid-feedback">
 										Please type a number from 1-5
 								</div>

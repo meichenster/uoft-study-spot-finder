@@ -41,10 +41,10 @@
   <!-- ======= Saved Spots Section ======= -->
     <section id="savedspots" class="contact">
       <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
+<!-- 
+        <!-- <div class="section-title"> -->
           <h2>My Saved Spots</h2>
-          <p>Please select your Username</p><br>
+          <!-- <p>Please select your Username</p><br>
           <form action = "SavedSpotsController">
           <select class="form-control" name = "un" onchange="this.form.submit()">
             <option disabled selected value> </option> 
@@ -53,8 +53,8 @@
           </c:forEach>
         </select>
         <br>
-      </form>
-        </div> 
+      </form> -->
+        </div>  -->
         <%
 		    String username = (String) session.getAttribute("username");
         StudySpot studyspots = new StudySpot();
@@ -64,9 +64,9 @@
         request.setAttribute("listofallspots", listofallspots);
       %>     
         <br><br>
-        <div class="row">
         <c:forEach items = "${listofallspots}" var = "spots">
-          <div class="col-lg-3">
+        <!-- <div class="row"> -->
+          <div class="col-lg-12">
             <div class="info-box mb-4">
               <i class="bx bx-map"></i>
               <h3> <c:out value = "${spots.location}"/></h3>
@@ -75,8 +75,8 @@
               </p>
             </div>
           </div>
-        </c:forEach>
-      </div>
+      <!-- </div> -->
+    </c:forEach>
       </div>
     </section><!-- End Saved Spots Section -->
   </main><!-- End #main -->
