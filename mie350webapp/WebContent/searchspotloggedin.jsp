@@ -151,11 +151,21 @@
 										What's the Location ID?
 									</div>
                   <br>
-                  <label for="rating">Rating (1-5)</label>
-									<input id="rating" type="text" class="form-control" name="rating" required data-eye>
-									<div class="invalid-feedback">
-										What's your Rating?
-									</div>
+                  <div class="form-group">
+                    <label for="rating">Rating (out of 5)</label>
+                    <!-- <input id="rating" type="number" class="form-control" name="rating" required data-eye> -->
+                    <select name="rating" id="rating" class="form-control">
+                      <option value=""></option>
+                      <option value=1>1</option>
+                      <option value=2>2</option>
+                      <option value=3>3</option>
+                      <option value=4>4</option>
+                      <option value=5>5</option>
+                      </select>
+                    <div class="invalid-feedback">
+                      Please type a number from 1-5
+                  </div>
+                  </div>
                   <br>
 								<div class="form-group m-0">
                   <div class="text-center">

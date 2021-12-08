@@ -36,7 +36,11 @@
 	  
 			  <div class="section-title">
 				<h2>Welcome to uoft studyspotter!&nbsp; &nbsp; &nbsp;</h2>
-				<p>Over the past year, students haven't been able to come to campus due to the COVID-19 pandemic. Many of the current first-year and second-year students have never been on campus before, and the upper-year students may have not had the opportunity to explore the campus enough in their first or second year. In order to address the students’ unfamiliarity with the campus, we want to help students find the best study spots on and around UofT’s St. George campus. In addition, this can aid students in finding new areas to meet for group meetings. To get started, 'Log In' or select a link from the 'Study Spots' dropdown.</p>
+				<p>Over the past year, students haven't been able to come to campus due to the COVID-19 pandemic. 
+					Many of the current first-year and second-year students have never been on campus before, 
+					and the upper-year students may have not had the opportunity to explore the campus enough in their first or second year. 
+					In order to address the students' unfamiliarity with the campus, we want to help students find the best study spots on and around UofT's St. George campus. 
+					In addition, this can aid students in finding new areas to meet for group meetings. To get started, 'Log In' or select a link from the 'Study Spots' dropdown.</p>
 			  </div>
 	  
 			  <div class="row">

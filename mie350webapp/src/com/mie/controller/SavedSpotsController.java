@@ -47,11 +47,11 @@ public class SavedSpotsController extends HttpServlet {
 		 * This method retrieves all of the information entered in the form on
 		 * the reviews.jsp page.
 		 */
-		User user = new User();
-		// try{
-			String username=request.getParameter("un");
-			HttpSession session = request.getSession(false); 
-			session.setAttribute("username", username);
+		// User user = new User();
+			// Retrieve the username
+			HttpSession session = request.getSession(true);
+			String username = (String) session.getAttribute("username");
+			// Retrieve the other stuff
 			String location = request.getParameter("location");
 			int locationID = 0;
 			try { 
@@ -64,6 +64,10 @@ public class SavedSpotsController extends HttpServlet {
 			response.sendRedirect("mysavedspots.jsp");
 	
 		// update database
+		System.out.println(username);
+		System.out.println(location);
+		System.out.println(locationID);
+		System.out.println(rating);
 		savedDao.addSavedSpot(username, location, locationID, rating);
 
 		// update user's list

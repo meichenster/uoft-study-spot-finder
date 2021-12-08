@@ -32,7 +32,6 @@ public class SavedSpotsDao {
 		 * This method adds a new StudySpot to the database.
 		 */
 		try {
-			System.out.println("Adding saved spot...");
 			PreparedStatement preparedStatement = connection
 					.prepareStatement("insert into Saved_Spots_DB(username, location, locationID, rating) values (?, ?, ?, ?)");
 			
