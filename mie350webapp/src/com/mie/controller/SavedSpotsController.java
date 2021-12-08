@@ -53,12 +53,18 @@ public class SavedSpotsController extends HttpServlet {
 			HttpSession session = request.getSession(false); 
 			session.setAttribute("username", username);
 			String location = request.getParameter("location");
-			String locationID = request.getParameter("locationID");
+			int locationID = 0;
+			try { 
+				locationID = Integer.parseInt(request.getParameter("locationID"));
+			} catch (NumberFormatException e) {
+				System.out.println(e);
+			}
+			
 			String rating = request.getParameter("rating");
 			response.sendRedirect("mysavedspots.jsp");
 	
 		// update database
-		// savedDao.addSavedSpot(username, location, locationID, rating);
+		savedDao.addSavedSpot(username, location, locationID, rating);
 
 		// update user's list
 		// StudySpot studyspot = studyDao.getStudySpotById(locationID);
