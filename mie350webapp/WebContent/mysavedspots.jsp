@@ -40,9 +40,8 @@
 
   <!-- ======= Saved Spots Section ======= -->
     <section id="savedspots" class="contact">
-      <div class="container" data-aos="fade-up">
-<!-- 
-        <!-- <div class="section-title"> -->
+      <div class="container" data-aos="fade-up"> 
+        <div class="section-title">
           <h2>My Saved Spots</h2>
           <!-- <p>Please select your Username</p><br>
           <form action = "SavedSpotsController">
@@ -54,7 +53,7 @@
         </select>
         <br>
       </form> -->
-        </div>  -->
+        </div>
         <%
 		    String username = (String) session.getAttribute("username");
         StudySpot studyspots = new StudySpot();
@@ -62,6 +61,7 @@
         ArrayList <StudySpot> listofallspots = new ArrayList <StudySpot>();
         listofallspots = dao2.getAllSavedSpots(username);
         request.setAttribute("listofallspots", listofallspots);
+        System.out.print(listofallspots);
       %>     
         <br><br>
         <c:forEach items = "${listofallspots}" var = "spots">
@@ -71,7 +71,9 @@
               <i class="bx bx-map"></i>
               <h3> <c:out value = "${spots.location}"/></h3>
               <p>
-              Location ID: <c:out value = "${spots.locationID}"/><br> 
+              <b>Location ID: </b> <c:out value = "${spots.locationID}"/><br>
+              <b>Area:</b> <c:out value = "${spots.area}"/><br>
+              <b>Link:</b> <c:out value = "${spots.link}"/><br>
               </p>
             </div>
           </div>
