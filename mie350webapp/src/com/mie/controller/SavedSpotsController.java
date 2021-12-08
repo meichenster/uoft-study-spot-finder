@@ -59,8 +59,7 @@ public class SavedSpotsController extends HttpServlet {
 			} catch (NumberFormatException e) {
 				System.out.println(e);
 			}
-			
-			String rating = request.getParameter("rating");
+			Double rating = Double.parseDouble(request.getParameter("rating"));
 			response.sendRedirect("mysavedspots.jsp");
 	
 		// update database

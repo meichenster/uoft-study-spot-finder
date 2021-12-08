@@ -132,7 +132,6 @@
 								</div>
 								<div class="form-group">
 									<label for="rating"><b>Rating (out of 5)</b></label>
-									<!-- <input id="rating" type="number" class="form-control" name="rating" required data-eye> -->
                   <select name="rating" id="rating" class="form-control">
 										<option value=""></option>
 										<option value=1>1</option>

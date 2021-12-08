@@ -27,7 +27,7 @@ public class SavedSpotsDao {
 		connection = DbUtil.getConnection();
 	}
 
-	public void addSavedSpot(String username, String location, int locationID, String rating) {
+	public void addSavedSpot(String username, String location, int locationID, Double rating) {
 		/**
 		 * This method adds a new StudySpot to the database.
 		 */
@@ -39,7 +39,7 @@ public class SavedSpotsDao {
 			preparedStatement.setString(1, username);
 			preparedStatement.setString(2, location);
 			preparedStatement.setInt(3, locationID);
-			preparedStatement.setString(4, rating);
+			preparedStatement.setDouble(4, rating);
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -114,7 +114,6 @@ public class SavedSpotsDao {
 				studyspot.setLocationID(rs.getInt("Saved_Spots_DB.locationID"));
 				studyspot.setRating(rs.getInt("Saved_Spots_DB.rating"));
 				studyspot.setLocationID(rs.getInt("Study_Spots_DB.locationID"));
-
 				studyspot.setName(rs.getString("spotName"));
 				studyspot.setArea(rs.getString("area"));
 				studyspot.setLink(rs.getString("mapLink"));
@@ -126,7 +125,7 @@ public class SavedSpotsDao {
 				studyspot.setHasFood(rs.getBoolean("foodSpots"));
 				studyspot.setHasGroupTables(rs.getBoolean("groupTables"));
 				studyspot.setIndoors(rs.getBoolean("indoors"));
-				studyspot.setRating(rs.getDouble("Study_Spots_DB.rating"));
+				//studyspot.setRating(rs.getDouble("Study_Spots_DB.rating"));
 				SavedSpots.add(studyspot);
 			}
 		} catch (SQLException e) {
